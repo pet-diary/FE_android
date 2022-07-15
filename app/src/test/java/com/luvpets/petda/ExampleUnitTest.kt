@@ -1,4 +1,4 @@
-package com.example.petda
+package com.luvpets.petda
 
 import org.junit.Test
 
