@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingTop="84dp"
+  android:paddingBottom="68dp">
+
+  <TextView
+    android:id="@+id/title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/pretendard_bold"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:text="나영님!\n어떤 반려동물을\n키우시나요?"
+    android:textColor="@color/gray_8"
+    android:textSize="28sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="HardcodedText" />
+
+  <LinearLayout
+    android:id="@+id/selectPetContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="32dp"
+      android:orientation="vertical">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="멍멍이"
+        android:textColor="@color/gray_7"
+        android:textSize="14sp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+      <ImageButton
+        android:id="@+id/selectDog"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        android:contentDescription="@string/select_pet"
+        android:src="@drawable/btn_selector_dog" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:orientation="vertical">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="냐옹이"
+        android:textColor="@color/gray_7"
+        android:textSize="14sp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+      <ImageButton
+        android:id="@+id/selectCat"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        android:contentDescription="@string/select_pet"
+        android:src="@drawable/btn_selector_cat" />
+    </LinearLayout>
+  </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="gray_1">#ffffff</color>
+  <color name="white">#ffffff</color>
   <color name="gray_2">#e4e4e4</color>
   <color name="gray_3">#c5c5c5</color>
   <color name="gray_4">#a9a9a9</color>
@@ -12,5 +12,9 @@
   <color name="gray_10">#242525</color>
   <color name="main">#f38e8e</color>
   <color name="kakao">#f9df4a</color>
-  <color name="kakao_test">#42282a</color>
+  <color name="kakao_text">#42282a</color>
+  <color name="label">#808080</color>
+  <color name="underLine">#ededed</color>
+  <color name="error">#f05c5c</color>
+  <color name="dark">#585858</color>
 </resources>

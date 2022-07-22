@@ -2,4 +2,21 @@
   <string name="app_name">펫다이어리</string>
   <string name="invite">초대코드 입력하기</string>
   <string name="start_kakao">카카오로 시작하기</string>
+  <string name="start_email">이메일로 로그인하기</string>
+  <string name="ic_login_dog">ic_login_dog</string>
+  <string name="ic_login_cat">ic_login_cat</string>
+  <string name="signUp">회원가입</string>
+  <string name="id">아이디</string>
+  <string name="pw">비밀번호</string>
+  <string name="login">로그인</string>
+  <string name="inputEmail">이메일 입력</string>
+  <string name="btn_delete">btn_delete</string>
+  <string name="next_page">다음 페이지</string>
+  <string name="email_error">*이메일 형식이 올바르지 않습니다.</string>
+  <string name="pw_error">*비밀번호는 영문,숫자 포함하여 8자 이내로 입력해주세요.</string>
+  <string name="pass_pw_chk">*비밀번호가 일치합니다.</string>
+  <string name="fail_pw_chk">*비밀번호가 일치하지 않습니다.</string>
+  <string name="name">이름</string>
+  <string name="ic_camera">ic_camera</string>
+  <string name="select_pet">select pet</string>
 </resources>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingStart="24dp"
+  android:paddingTop="74dp"
+  android:paddingEnd="24dp"
+  tools:context=".activities.EmailLoginActivity">
+
+  <LinearLayout
+    android:id="@+id/Title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:orientation="vertical"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/pretendard_bold"
+      android:lineSpacingExtra="3dp"
+      android:text="우리 반려동물을 위한\n기록습관"
+      android:textColor="@color/gray_8"
+      android:textSize="28sp"
+      tools:ignore="HardcodedText,SpUsage" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="@string/app_name"
+        android:textColor="@color/gray_8"
+        android:textSize="28sp"
+        tools:ignore="SpUsage" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_regular"
+        android:text="에"
+        android:textColor="@color/gray_8"
+        android:textSize="28sp"
+        tools:ignore="HardcodedText,SpUsage" />
+    </LinearLayout>
+
+    <TextView
+
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/pretendard_regular"
+      android:text="오신것을 환영해요 🐶 🐱"
+      android:textColor="@color/gray_8"
+      android:textSize="28sp"
+      tools:ignore="HardcodedText,SpUsage" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_regular"
+        android:labelFor="@id/inputId"
+        android:text="@string/id"
+        android:textColor="@color/label"
+        android:textSize="16sp" />
+
+      <EditText
+        android:id="@+id/inputId"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:autofillHints="emailAddress"
+        android:background="@drawable/underline"
+        android:fontFamily="@font/pretendard_regular"
+        android:inputType="text"
+        android:textSize="21sp" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:paddingTop="24sp">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_regular"
+        android:labelFor="@id/inputPw"
+        android:text="@string/pw"
+        android:textColor="@color/label"
+        android:textSize="16sp" />
+
+      <EditText
+        android:id="@+id/inputPw"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:autofillHints="password"
+        android:background="@drawable/underline"
+        android:fontFamily="@font/pretendard_regular"
+        android:inputType="textPassword" />
+    </LinearLayout>
+
+    <Button
+      android:id="@+id/btnLogin"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:layout_marginTop="24dp"
+      android:background="@drawable/btn_radius"
+      android:fontFamily="@font/pretendard_regular"
+      android:text="@string/login" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:gravity="center">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_regular"
+        android:text="아직 계정이 없으신가요?"
+        android:textColor="@color/gray_7"
+        android:textSize="13sp"
+        tools:ignore="HardcodedText" />
+
+      <TextView
+        android:id="@+id/btnToSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="@string/signUp"
+        android:textColor="@color/gray_8"
+        android:textSize="13sp" />
+    </LinearLayout>
+
+  </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
