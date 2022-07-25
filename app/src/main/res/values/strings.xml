@@ -19,4 +19,7 @@
   <string name="name">이름</string>
   <string name="ic_camera">ic_camera</string>
   <string name="select_pet">select pet</string>
+  <string name="girl">여아</string>
+  <string name="boy">남아</string>
+  <string name="ic_calendar">ic_calendar</string>
 </resources>

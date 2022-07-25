@@ -26,17 +26,19 @@ class EnterMyInfo : AppCompatActivity() {
     handleNextPage()
   }
   
+  // 렌더링 시 1단계 표출.
   private fun initFragment() {
     handleCurrentPages("init")
   }
+  // 건너뛰기 클릭 시 스택 전부 제거 후 홈으로 이동.
   private fun handleSkip() {
     binding.btnSkip.setOnClickListener{
       val intent = Intent(this, HomeActivity::class.java)
-      // 스택 전부 제거
       startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP))
       finish()
     }
   }
+  // 뒤로 버튼 클릭 시 한 단계씩 뒤로, 1단계 시 로그인 페이지로 이동.
   private fun handleBack() {
     binding.btnBack.setOnClickListener {
       if (currentPage > 1) {
@@ -49,6 +51,7 @@ class EnterMyInfo : AppCompatActivity() {
       }
     }
   }
+  // 다음 페이지 클릭 시 단계 뒤로 이동.
   private fun handleNextPage() {
     binding.btnNextPage.setOnClickListener {
       currentPage += 1
@@ -56,7 +59,6 @@ class EnterMyInfo : AppCompatActivity() {
     }
   }
   private fun handleCurrentPages(type: String) {
-    Log.d("currentPage", "${currentPage}")
     when (currentPage) {
       1 -> {
         if (type == "init") {
@@ -123,6 +125,7 @@ class EnterMyInfo : AppCompatActivity() {
     }
   }
   
+  // fragment 연결.
   private fun handleFragment(fragment: Fragment) {
     supportFragmentManager
       .beginTransaction()

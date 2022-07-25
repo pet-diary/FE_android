@@ -7,19 +7,36 @@
   android:paddingTop="84dp"
   android:paddingBottom="68dp">
 
-  <TextView
+  <LinearLayout
     android:id="@+id/title"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fontFamily="@font/pretendard_bold"
-    android:paddingStart="24dp"
-    android:paddingEnd="24dp"
-    android:text="나영님!\n어떤 반려동물을\n키우시나요?"
-    android:textColor="@color/gray_8"
-    android:textSize="28sp"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:ignore="HardcodedText" />
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <TextView
+      android:id="@+id/userNameText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/pretendard_bold"
+      android:paddingStart="24dp"
+      android:paddingEnd="24dp"
+      android:textColor="@color/gray_8"
+      android:textSize="28sp"
+      tools:ignore="HardcodedText" />
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/pretendard_bold"
+      android:paddingStart="24dp"
+      android:paddingEnd="24dp"
+      android:layout_marginTop="-5dp"
+      android:text="어떤 반려동물을\n키우시나요?"
+      android:textColor="@color/gray_8"
+      android:textSize="28sp"
+      tools:ignore="HardcodedText" />
+  </LinearLayout>
+
 
   <LinearLayout
     android:id="@+id/selectPetContent"
@@ -45,15 +62,15 @@
         android:textSize="14sp"
         tools:ignore="HardcodedText,SpUsage" />
 
-      <ImageButton
+      <RadioButton
         android:id="@+id/selectDog"
         android:layout_width="123dp"
         android:layout_height="123dp"
         android:layout_marginTop="13dp"
         android:layout_marginBottom="20dp"
-        android:background="@color/white"
         android:contentDescription="@string/select_pet"
-        android:src="@drawable/btn_selector_dog" />
+        android:button="@null"
+        android:drawableStart="@drawable/btn_selector_dog" />
     </LinearLayout>
 
     <LinearLayout
@@ -72,7 +89,7 @@
         android:textSize="14sp"
         tools:ignore="HardcodedText,SpUsage" />
 
-      <ImageButton
+      <RadioButton
         android:id="@+id/selectCat"
         android:layout_width="123dp"
         android:layout_height="123dp"
@@ -80,7 +97,8 @@
         android:layout_marginBottom="20dp"
         android:background="@color/white"
         android:contentDescription="@string/select_pet"
-        android:src="@drawable/btn_selector_cat" />
+        android:button="@null"
+        android:drawableEnd="@drawable/btn_selector_cat" />
     </LinearLayout>
   </LinearLayout>
 

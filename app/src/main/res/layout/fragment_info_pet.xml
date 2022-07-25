@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingStart="24dp"
+  android:paddingTop="84dp"
+  android:paddingEnd="24dp"
+  android:paddingBottom="68dp">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/pretendard_bold"
+      android:text="반려동물의\n정보를 입력해주세요"
+      android:textColor="@color/gray_8"
+      android:textSize="28sp"
+      tools:ignore="HardcodedText" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:orientation="vertical">
+
+      <LinearLayout
+        android:id="@+id/petInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/petBirth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+          android:id="@+id/btnCamera"
+          android:layout_width="105dp"
+          android:layout_height="105dp"
+          android:background="@drawable/circle_gray"
+          android:contentDescription="@string/ic_camera"
+          android:gravity="center"
+          android:src="@drawable/ic_camera" />
+
+        <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginStart="32dp"
+          android:layout_weight="1"
+          android:orientation="vertical">
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/name"
+              android:textColor="@color/gray_7"
+              android:textSize="13sp" />
+
+            <EditText
+              android:id="@+id/petName"
+              android:layout_width="match_parent"
+              android:layout_height="24dp"
+              android:autofillHints="no"
+              android:background="@drawable/underline"
+              android:fontFamily="@font/pretendard_bold"
+              android:inputType="text"
+              android:textSize="17sp"
+              tools:ignore="LabelFor,SpUsage" />
+          </LinearLayout>
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+              android:id="@+id/btnGirl"
+              android:layout_width="57dp"
+              android:layout_height="34dp"
+              android:background="@drawable/btn_18r_default"
+              android:fontFamily="@font/pretendard_regular"
+              android:gravity="center"
+              android:text="@string/girl"
+              android:textColor="@color/gray_9"
+              android:textSize="14sp" />
+
+            <TextView
+              android:id="@+id/btnBoy"
+              android:layout_width="57dp"
+              android:layout_height="34dp"
+              android:layout_marginStart="8dp"
+              android:background="@drawable/btn_18r_main"
+              android:fontFamily="@font/pretendard_regular"
+              android:gravity="center"
+              android:text="@string/boy"
+              android:textColor="@color/white"
+              android:textSize="14sp" />
+          </LinearLayout>
+        </LinearLayout>
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/petBirth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/petWithMe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/petInfo">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/pretendard_regular"
+          android:text="태어난 날"
+          android:textColor="@color/gray_7"
+          android:textSize="13sp"
+          tools:ignore="HardcodedText,SpUsage" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/btnPetBirth"
+          android:layout_width="match_parent"
+          android:layout_height="24dp"
+          android:background="@drawable/underline"
+          android:paddingEnd="5dp"
+          tools:ignore="RtlSymmetry">
+
+          <TextView
+            android:id="@+id/petBirthText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/pretendard_bold"
+            android:textSize="18sp"
+            tools:ignore="SpUsage" />
+
+          <ImageButton
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/ic_calendar"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/petWithMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/petBreed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/petBirth">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/pretendard_regular"
+          android:text="나와 함께하기 시작한 날"
+          android:textColor="@color/gray_7"
+          android:textSize="13sp"
+          tools:ignore="HardcodedText,SpUsage" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/btnPetWithMe"
+          android:layout_width="match_parent"
+          android:layout_height="24dp"
+          android:paddingEnd="5dp"
+          tools:ignore="RtlSymmetry">
+
+          <TextView
+            android:id="@+id/petWithMeText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/underline"
+            android:fontFamily="@font/pretendard_bold"
+            android:textSize="18sp"
+            tools:ignore="SpUsage" />
+
+          <ImageButton
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_gravity="end"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/ic_calendar"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/petBreed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/petWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/petWithMe">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/pretendard_regular"
+          android:text="품종"
+          android:textColor="@color/gray_7"
+          android:textSize="13sp"
+          tools:ignore="HardcodedText,SpUsage" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/btnPetBreed"
+          android:layout_width="match_parent"
+          android:layout_height="24dp"
+          android:paddingEnd="5dp"
+          tools:ignore="RtlSymmetry">
+
+          <TextView
+            android:id="@+id/petBreedText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/underline"
+            android:fontFamily="@font/pretendard_bold"
+            android:textSize="18sp"
+            tools:ignore="SpUsage" />
+
+          <ImageButton
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_gravity="end"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/ic_calendar"
+            android:src="@drawable/ic_arrow_bottom"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/petWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/petNeutering"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/petBreed">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/pretendard_regular"
+          android:text="체중"
+          android:textColor="@color/gray_7"
+          android:textSize="13sp"
+          tools:ignore="HardcodedText,SpUsage" />
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/underline"
+          android:paddingStart="0dp"
+          android:paddingEnd="5dp"
+          android:paddingBottom="4dp">
+
+          <EditText
+            android:id="@+id/petWeightText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autofillHints="no"
+            android:background="@null"
+            android:fontFamily="@font/pretendard_bold"
+            android:inputType="numberDecimal"
+            android:textSize="18sp"
+            tools:ignore="LabelFor,SpUsage" />
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="kg"
+            android:textColor="@color/gray_8"
+            android:textSize="17sp"
+            tools:ignore="HardcodedText,SpUsage" />
+        </LinearLayout>
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/petNeutering"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/petWeight">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/pretendard_regular"
+          android:text="중성화"
+          android:textColor="@color/gray_7"
+          android:textSize="13sp"
+          tools:ignore="HardcodedText,SpUsage" />
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginTop="10dp"
+          android:paddingStart="0dp"
+          android:paddingEnd="5dp">
+
+          <TextView
+            android:id="@+id/btnPetNonNeutering"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:background="@drawable/btn_18r_default"
+            android:fontFamily="@font/pretendard_regular"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="안했어요"
+            android:textColor="@color/gray_9"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText,SpUsage" />
+
+          <TextView
+            android:id="@+id/btnPetNeutering"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/btn_18r_main"
+            android:fontFamily="@font/pretendard_regular"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="했어요"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText,SpUsage" />
+        </LinearLayout>
+      </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

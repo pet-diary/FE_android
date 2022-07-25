@@ -125,9 +125,10 @@
   <androidx.fragment.app.FragmentContainerView
     android:id="@+id/enterInfoFragment"
     android:layout_width="match_parent"
-    app:layout_constraintTop_toBottomOf="@id/header"
+    android:layout_height="match_parent"
     app:layout_constraintBottom_toTopOf="@id/btnNextPage"
-    android:layout_height="match_parent" />
+    app:layout_constraintTop_toBottomOf="@id/header" />
+
   <LinearLayout
     android:id="@+id/btnNextPage"
     android:layout_width="match_parent"

@@ -11,12 +11,17 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
 import com.bumptech.glide.Glide
+import com.luvpets.petda.R
 import com.luvpets.petda.activities.EnterMyInfo
 import com.luvpets.petda.databinding.FragmentInfoUserBinding
 
@@ -25,6 +30,7 @@ class EnterInfoFragment: Fragment() {
   private val binding get() = _binding!!
   
   private lateinit var _context: Context
+  
   
   override fun onCreateView(
     inflater: LayoutInflater,
@@ -36,12 +42,12 @@ class EnterInfoFragment: Fragment() {
     if (container != null) {
       _context = container.context
     }
-    
+  
+    handleChangeInput()
     handleClickBtnCamera()
     
     return binding.root
   }
-  
   @Deprecated("Deprecated in Java")
   override fun onRequestPermissionsResult(
     requestCode: Int,
@@ -57,7 +63,12 @@ class EnterInfoFragment: Fragment() {
       showAlert("권한 요청 확인","권한이 거부되었을 경우 서비스 이용이 어렵습니다.")
     }
   }
-  
+  private fun handleChangeInput() {
+    binding.inputName.addTextChangedListener{
+      val userName = binding.inputName.text.toString()
+      setFragmentResult("userNameData", bundleOf("userName" to userName))
+    }
+  }
   private val imagePickerLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
     val imageUri = it.data?.data
     val glide = Glide.with(this)
