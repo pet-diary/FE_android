@@ -6,6 +6,7 @@
   android:layout_height="match_parent"
   tools:context=".activities.EnterMyInfo">
 
+
   <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/header"
     android:layout_width="match_parent"
@@ -125,7 +126,7 @@
   <androidx.fragment.app.FragmentContainerView
     android:id="@+id/enterInfoFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="0dp"
     app:layout_constraintBottom_toTopOf="@id/btnNextPage"
     app:layout_constraintTop_toBottomOf="@id/header" />
 
@@ -153,6 +154,5 @@
       android:contentDescription="@string/next_page"
       android:src="@drawable/ic_paw" />
   </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

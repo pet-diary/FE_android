@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
 import com.luvpets.petda.databinding.FragmentSelectPetBinding
 
@@ -38,9 +40,11 @@ class EnterSelectPetFragment: Fragment() {
     val dog = binding.selectDog
     cat.setOnClickListener {
       changeChecked(dog)
+      setFragmentResult("selectPetData", bundleOf("selectPet" to "냐옹이"))
     }
     dog.setOnClickListener {
       changeChecked(cat)
+      setFragmentResult("selectPetData", bundleOf("selectPet" to "멍멍이"))
     }
   }
   private fun changeChecked(item: RadioButton) {

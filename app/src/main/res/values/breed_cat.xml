@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="breed_cat">
+    <item>혼합묘(믹스)</item>
+    <item>브리티시 숏헤어</item>
+    <item>페르시안</item>
+    <item>메인쿤</item>
+    <item>샴</item>
+    <item>렉돌</item>
+    <item>스핑크스</item>
+    <item>아비시니안</item>
+    <item>벵갈</item>
+    <item>버먼</item>
+    <item>아메리칸 숏헤어</item>
+    <item>엔조틱 숏헤어</item>
+    <item>러시안 블루</item>
+    <item>스코티시 폴드</item>
+    <item>버마</item>
+    <item>노르웨이 숲</item>
+    <item>데본 렉스</item>
+    <item>시베리안</item>
+    <item>맹크스</item>
+    <item>터키시 앙고라</item>
+    <item>아메리칸 밥테일</item>
+    <item>코시니 렉스</item>
+    <item>아메리칸 컬</item>
+    <item>히말리안</item>
+    <item>봄베이</item>
+    <item>이집션 마우</item>
+    <item>발리니즈</item>
+    <item>사트트뢰</item>
+    <item>라가머핀</item>
+    <item>터키시 반</item>
+    <item>먼치킨</item>
+    <item>오시캣</item>
+    <item>싱가푸라</item>
+    <item>소말리</item>
+    <item>아메리칸 와이어헤어</item>
+    <item>셀커스 렉스</item>
+    <item>톤키니즈</item>
+    <item>코랏</item>
+    <item>오리엔탈 숏헤어</item>
+    <item>라팜</item>
+    <item>사바나</item>
+    <item>하바나 브라운</item>
+    <item>버밀라</item>
+    <item>컬러포인트 숏헤어</item>
+    <item>스노우슈</item>
+    <item>자바니즈</item>
+    <item>픽시 밥</item>
+    <item>킴릭</item>
+    <item>토이거</item>
+    <item>네벨룽</item>
+    <item>피터볼드</item>
+  </string-array>
+</resources>

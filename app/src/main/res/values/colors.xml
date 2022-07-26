@@ -17,4 +17,9 @@
   <color name="underLine">#ededed</color>
   <color name="error">#f05c5c</color>
   <color name="dark">#585858</color>
+  <color name="btn_slide">#c0c0c0</color>
+  <color name="bg_search">#f1f1f1</color>
+  <color name="dim">#23000000</color>
+  <color name="notice">#50c99b</color>
+  <color name="border">#efefef</color>
 </resources>

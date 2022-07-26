@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingStart="23dp"
+  android:paddingTop="13dp"
+  android:paddingEnd="23dp"
+  android:paddingBottom="13dp">
+
+  <LinearLayout
+    android:id="@+id/modeSimple"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:background="@drawable/btn_12r_main"
+    android:orientation="vertical"
+    android:paddingStart="22dp"
+    android:paddingTop="26dp"
+    android:paddingEnd="22dp"
+    android:paddingBottom="26dp"
+    app:layout_constraintBottom_toTopOf="@id/modeDetail"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="@string/mode_simple"
+        android:textColor="@color/gray_8"
+        android:textSize="20sp" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="13dp"
+        android:fontFamily="@font/pretendard_regular"
+        android:text="*모드는 나중에 변경할 수 있어요!"
+        android:textColor="@color/notice"
+        android:textSize="12sp"
+        tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="13dp"
+      android:fontFamily="@font/pretendard_regular"
+      android:text="간단모드에서는 간편하게 반려동물의\n케어 상황을 체크할 수 있어요!"
+      android:textSize="13sp"
+      tools:ignore="HardcodedText" />
+
+    <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="193dp"
+      android:layout_marginTop="15dp"
+      android:scaleType="fitXY"
+      android:src="@drawable/img_mode_simple" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/modeDetail"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/btn_12r_default"
+    android:orientation="vertical"
+    android:paddingStart="22dp"
+    android:paddingTop="26dp"
+    android:paddingEnd="22dp"
+    android:paddingBottom="26dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/modeSimple">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mode_detail"
+        android:textColor="@color/gray_8"
+        android:textSize="20sp"
+        android:fontFamily="@font/pretendard_bold" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="13dp"
+        android:text="*모드는 나중에 변경할 수 있어요!"
+        android:textColor="@color/notice"
+        android:textSize="12sp"
+        android:fontFamily="@font/pretendard_regular"
+        tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="13dp"
+      android:text="섬세모드에서는 정확하게 수치까지 기록하면서\n반려동물의 케어 상황을 작성할 수 있어요!"
+      android:textSize="13sp"
+      android:fontFamily="@font/pretendard_regular"
+      tools:ignore="HardcodedText" />
+
+    <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="15dp"
+      android:scaleType="fitXY"
+      android:src="@drawable/img_mode_detail" />
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

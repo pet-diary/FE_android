@@ -22,4 +22,10 @@
   <string name="girl">여아</string>
   <string name="boy">남아</string>
   <string name="ic_calendar">ic_calendar</string>
+  <string name="ic_check">ic_check</string>
+  <string name="cancel">취소</string>
+  <string name="confirm">확인</string>
+  <string name="mode_simple">간단모드</string>
+  <string name="mode_detail">섬세모드</string>
+  <string name="ic_completed_bg">ic_completed_bg</string>
 </resources>

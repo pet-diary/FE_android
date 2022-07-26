@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/bg_18r_white"
+  android:gravity="center"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="20dp"
+    android:paddingTop="20dp"
+    android:paddingEnd="20dp">
+
+    <NumberPicker
+      android:id="@+id/year"
+      android:layout_width="63dp"
+      android:layout_height="124dp"
+      android:theme="@style/AppTheme.NumberPicker"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+      android:id="@+id/month"
+      android:layout_width="63dp"
+      android:layout_height="124dp"
+      android:layout_marginStart="20dp"
+      android:theme="@style/AppTheme.NumberPicker"
+      app:layout_constraintStart_toEndOf="@+id/yearpicker_datepicker"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+      android:id="@+id/day"
+      android:layout_width="63dp"
+      android:layout_height="124dp"
+      android:layout_marginStart="20dp"
+      android:theme="@style/AppTheme.NumberPicker"
+      app:layout_constraintStart_toEndOf="@+id/yearpicker_datepicker"
+      app:layout_constraintTop_toTopOf="parent" />
+  </LinearLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="20dp">
+
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btnCancel"
+      android:layout_width="wrap_content"
+      android:layout_height="34dp"
+      android:background="@drawable/btn_18r_default"
+      android:fontFamily="@font/pretendard_bold"
+      android:text="@string/cancel"
+      android:textColor="@color/gray_8"
+      app:layout_constraintEnd_toStartOf="@id/btnConfirm"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btnConfirm"
+      style="?android:attr/borderlessButtonStyle"
+      android:layout_width="wrap_content"
+      android:layout_height="34dp"
+      android:background="@drawable/btn_18r_main"
+      android:backgroundTint="@null"
+      android:fontFamily="@font/pretendard_bold"
+      android:text="@string/confirm"
+      android:textColor="@color/white"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/btnCancel"
+      app:layout_constraintTop_toTopOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
