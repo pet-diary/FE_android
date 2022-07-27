@@ -13,12 +13,10 @@ import com.luvpets.petda.R
 import com.luvpets.petda.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
-  private var _binding: ActivityLoginBinding? = null
-  private val binding get() = _binding!!
+  private val binding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
   
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    _binding = ActivityLoginBinding.inflate(layoutInflater)
     setContentView(binding.root)
     
     handleStartKakao()

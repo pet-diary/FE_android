@@ -11,13 +11,11 @@ import com.luvpets.petda.databinding.ActivityEnterMyInfoBinding
 import com.luvpets.petda.fragment.*
 
 class EnterMyInfo : AppCompatActivity() {
-  private var _binding: ActivityEnterMyInfoBinding? = null
-  private val binding get() = _binding!!
+  private val binding by lazy { ActivityEnterMyInfoBinding.inflate(layoutInflater) }
   private var currentPage = 1
   
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    _binding = ActivityEnterMyInfoBinding.inflate(layoutInflater)
     setContentView(binding.root)
     
     initFragment()

@@ -15,12 +15,10 @@ import com.luvpets.petda.databinding.ActivitySignUpBinding
 import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
-  private var _binding: ActivitySignUpBinding?= null
-  private val binding get() = _binding!!
+  private val binding by lazy { ActivitySignUpBinding.inflate(layoutInflater) }
   
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    _binding = ActivitySignUpBinding.inflate(layoutInflater)
     setContentView(binding.root)
     
     initInput()

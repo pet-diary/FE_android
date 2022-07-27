@@ -6,13 +6,10 @@ import android.os.Bundle
 import com.luvpets.petda.databinding.ActivityEmailLoginBinding
 
 class EmailLoginActivity : AppCompatActivity() {
-  private var _binding: ActivityEmailLoginBinding? = null
-  private val binding get() = _binding!!
+  private val binding by lazy { ActivityEmailLoginBinding.inflate(layoutInflater) }
   
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    
-    _binding = ActivityEmailLoginBinding.inflate(layoutInflater)
     setContentView(binding.root)
     
     handleStartSignUp()
