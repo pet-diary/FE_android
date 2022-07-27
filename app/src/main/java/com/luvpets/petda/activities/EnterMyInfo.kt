@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.luvpets.petda.R
 import com.luvpets.petda.databinding.ActivityEnterMyInfoBinding
 import com.luvpets.petda.fragment.*
+import kotlin.concurrent.thread
 
 class EnterMyInfo : AppCompatActivity() {
   private val binding by lazy { ActivityEnterMyInfoBinding.inflate(layoutInflater) }
@@ -115,16 +116,19 @@ class EnterMyInfo : AppCompatActivity() {
           binding.process4.setBackgroundResource(R.drawable.circle_default)
         }
       }
-      5 -> {
-        if (type == "next") {
-          handleFragment(EnterCompleteFragment())
-        }
-      }
       else -> {
         if (type == "next") {
-          val intent = Intent(this, HomeActivity::class.java)
-          startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP))
-          finish()
+          handleFragment(EnterCompleteFragment())
+          // 백그라운드에서 실행
+          thread(start=true) {
+            Thread.sleep(5000)
+            // 메인스레드에서 실행
+            runOnUiThread {
+              val intent = Intent(this, HomeActivity::class.java)
+              startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP))
+              finish()
+            }
+          }
         }
       }
     }
