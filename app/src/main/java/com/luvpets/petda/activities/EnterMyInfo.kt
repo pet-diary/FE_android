@@ -121,7 +121,7 @@ class EnterMyInfo : AppCompatActivity() {
           handleFragment(EnterCompleteFragment())
           // 백그라운드에서 실행
           thread(start=true) {
-            Thread.sleep(5000)
+            Thread.sleep(500)
             // 메인스레드에서 실행
             runOnUiThread {
               val intent = Intent(this, HomeActivity::class.java)

@@ -14,16 +14,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:paddingStart="24dp"
-      android:paddingEnd="24dp">
+      android:paddingStart="24sp"
+      android:paddingTop="74sp"
+      android:paddingEnd="24sp"
+      android:paddingBottom="68sp">
 
       <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/pretendard_bold"
-        android:lineSpacingExtra="3dp"
-        android:paddingTop="74dp"
+        android:lineSpacingExtra="3sp"
         android:text="반가워요! 🐶 🐱\n펫다이어리\n회원가입을 해주세요"
         android:textColor="@color/gray_8"
         android:textSize="28sp"
@@ -34,9 +35,9 @@
 
       <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:layout_marginTop="35sp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title">
 
@@ -67,6 +68,7 @@
               android:background="@drawable/underline"
               android:fontFamily="@font/pretendard_regular"
               android:inputType="textEmailAddress"
+              android:imeOptions="actionNext"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent" />
 
@@ -126,6 +128,7 @@
               android:background="@drawable/underline"
               android:fontFamily="@font/pretendard_regular"
               android:inputType="text"
+              android:imeOptions="actionNext"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent" />
 
@@ -185,6 +188,7 @@
               android:background="@drawable/underline"
               android:fontFamily="@font/pretendard_regular"
               android:inputType="textPassword"
+              android:imeOptions="actionNext"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent" />
 
@@ -244,6 +248,7 @@
               android:background="@drawable/underline"
               android:fontFamily="@font/pretendard_regular"
               android:inputType="textPassword"
+              android:imeOptions="actionDone"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent" />
 
@@ -281,7 +286,7 @@
   <LinearLayout
     android:id="@+id/btnNextPage"
     android:layout_width="match_parent"
-    android:layout_height="68dp"
+    android:layout_height="68sp"
     android:background="@color/main"
     android:gravity="center"
     android:visibility="invisible"
@@ -300,7 +305,7 @@
     <ImageView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="8dp"
+      android:layout_marginStart="8sp"
       android:contentDescription="@string/next_page"
       android:src="@drawable/ic_paw" />
   </LinearLayout>

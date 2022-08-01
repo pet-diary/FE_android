@@ -72,16 +72,16 @@
       </LinearLayout>
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-      android:layout_width="match_parent"
-      android:layout_height="46dp"
-      android:layout_marginTop="42dp"
-      android:background="@drawable/btn_35r_outline"
-      android:fontFamily="@font/pretendard_bold"
-      android:text="집사 구성원 추가"
-      android:textColor="@color/dark"
-      android:textSize="14sp"
-      tools:ignore="HardcodedText" />
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--      android:layout_width="match_parent"-->
+<!--      android:layout_height="46dp"-->
+<!--      android:layout_marginTop="42dp"-->
+<!--      android:background="@drawable/btn_35r_outline"-->
+<!--      android:fontFamily="@font/pretendard_bold"-->
+<!--      android:text="집사 구성원 추가"-->
+<!--      android:textColor="@color/dark"-->
+<!--      android:textSize="14sp"-->
+<!--      tools:ignore="HardcodedText" />-->
 
   </LinearLayout>
 

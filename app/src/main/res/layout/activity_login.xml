@@ -45,45 +45,66 @@
       <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="28sp"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/pretendard_bold"
         android:lineSpacingExtra="3dp"
         android:text="우리 반려동물을 위한\n기록습관"
         android:textColor="@color/gray_8"
         android:textSize="28sp"
-        tools:ignore="HardcodedText,SpUsage" />
+        tools:ignore="HardcodedText,SpUsage"
+        tools:targetApi="o" />
 
       <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-5sp">
 
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:autoSizeMaxTextSize="28sp"
+          android:autoSizeMinTextSize="12sp"
+          android:autoSizeStepGranularity="2sp"
+          android:autoSizeTextType="uniform"
           android:fontFamily="@font/pretendard_bold"
           android:text="@string/app_name"
           android:textColor="@color/gray_8"
           android:textSize="28sp"
-          tools:ignore="SpUsage" />
+          tools:ignore="SpUsage"
+          tools:targetApi="o" />
 
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:autoSizeMaxTextSize="28sp"
+          android:autoSizeMinTextSize="12sp"
+          android:autoSizeStepGranularity="2sp"
+          android:autoSizeTextType="uniform"
           android:fontFamily="@font/pretendard_regular"
           android:text="에"
           android:textColor="@color/gray_8"
           android:textSize="28sp"
-          tools:ignore="HardcodedText,SpUsage" />
+          tools:ignore="HardcodedText,SpUsage"
+          tools:targetApi="o" />
       </LinearLayout>
 
       <TextView
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-5sp"
+        android:autoSizeMaxTextSize="28sp"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/pretendard_regular"
         android:text="오신것을 환영해요 🐶 🐱"
         android:textColor="@color/gray_8"
         android:textSize="28sp"
-        tools:ignore="HardcodedText,SpUsage" />
+        tools:ignore="HardcodedText,SpUsage"
+        tools:targetApi="o" />
     </LinearLayout>
 
     <LinearLayout

@@ -31,7 +31,6 @@ class EnterInfoFragment: Fragment() {
   
   private lateinit var _context: Context
   
-  
   override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
