@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+    android:id="@+id/community"
+    android:title="@string/home_community"
+    android:icon="@drawable/ic_home_community"
+    />
+  <item
+    android:id="@+id/walk"
+    android:title="@string/home_walk"
+    android:icon="@drawable/ic_home_walk"
+    />
+  <item
+    android:id="@+id/calendar"
+    android:title="@string/home_calendar"
+    android:icon="@drawable/ic_home_calendar"
+    />
+  <item
+    android:id="@+id/alert"
+    android:title="@string/home_alert"
+    android:icon="@drawable/ic_home_alert"
+    />
+  <item
+    android:id="@+id/myPage"
+    android:title="@string/home_myPage"
+    android:icon="@drawable/ic_home_mypage"
+    />
+</menu>

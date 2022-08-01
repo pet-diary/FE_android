@@ -1,4 +1,4 @@
-package com.luvpets.petda.fragment
+package com.luvpets.petda.fragment.enterInfo
 
 import android.Manifest
 import android.content.Context
@@ -7,11 +7,9 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
@@ -21,13 +19,11 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
 import com.bumptech.glide.Glide
-import com.luvpets.petda.R
 import com.luvpets.petda.activities.EnterMyInfo
 import com.luvpets.petda.databinding.FragmentInfoUserBinding
 
 class EnterInfoFragment: Fragment() {
-  private var _binding: FragmentInfoUserBinding? = null
-  private val binding get() = _binding!!
+  private val binding by lazy { FragmentInfoUserBinding.inflate(layoutInflater) }
   
   private lateinit var _context: Context
   
@@ -36,7 +32,6 @@ class EnterInfoFragment: Fragment() {
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    _binding = FragmentInfoUserBinding.inflate(inflater, container, false)
   
     if (container != null) {
       _context = container.context
@@ -102,10 +97,5 @@ class EnterInfoFragment: Fragment() {
       .setPositiveButton("동의") { _, _ -> requestPermission()}
       .setNegativeButton("취소", null)
     builder.create().show()
-  }
-  
-  override fun onDestroyView() {
-    super.onDestroyView()
-    _binding = null
   }
 }

@@ -1,30 +1,24 @@
-package com.luvpets.petda.fragment
+package com.luvpets.petda.fragment.enterInfo
 
 import android.Manifest
 import android.app.AlertDialog
-import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
-import android.icu.util.Calendar
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
 import android.widget.NumberPicker
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
-import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
@@ -37,8 +31,7 @@ import com.luvpets.petda.databinding.FragmentInfoPetBinding
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 
 class EnterInfoPetsFragment: Fragment(){
-  private var _binding: FragmentInfoPetBinding? = null
-  private val binding get() = _binding!!
+  private val binding by lazy { FragmentInfoPetBinding.inflate(layoutInflater) }
   private var pet: String? = null
   private var breedArr: MutableList<String>? = null
   
@@ -65,7 +58,6 @@ class EnterInfoPetsFragment: Fragment(){
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    _binding = FragmentInfoPetBinding.inflate(inflater, container, false)
   
     if (container != null) {
       _context = container.context
@@ -245,10 +237,5 @@ class EnterInfoPetsFragment: Fragment(){
       .setPositiveButton("동의") { _, _ -> requestPermission()}
       .setNegativeButton("취소", null)
     builder.create().show()
-  }
-  
-  override fun onDestroyView() {
-    super.onDestroyView()
-    _binding = null
   }
 }

@@ -28,4 +28,13 @@
   <string name="mode_simple">간단모드</string>
   <string name="mode_detail">섬세모드</string>
   <string name="ic_completed_bg">ic_completed_bg</string>
+  <string name="home_community">커뮤니티</string>
+  <string name="home_walk">강아지산책</string>
+  <string name="home_calendar">캘린더</string>
+  <string name="home_alert">알림</string>
+  <string name="home_myPage">마이페이지</string>
+  <string name="float_write">글쓰기</string>
+  <string name="ic_paw">ic_paw</string>
+  <string name="community_tab_share">정보공유</string>
+  <string name="community_tab_photo">자랑하기</string>
 </resources>

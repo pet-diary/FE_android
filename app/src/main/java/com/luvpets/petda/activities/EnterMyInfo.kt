@@ -3,12 +3,11 @@ package com.luvpets.petda.activities
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.luvpets.petda.R
 import com.luvpets.petda.databinding.ActivityEnterMyInfoBinding
-import com.luvpets.petda.fragment.*
+import com.luvpets.petda.fragment.enterInfo.*
 import kotlin.concurrent.thread
 
 class EnterMyInfo : AppCompatActivity() {

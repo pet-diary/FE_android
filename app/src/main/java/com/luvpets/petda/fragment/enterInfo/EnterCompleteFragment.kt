@@ -1,4 +1,4 @@
-package com.luvpets.petda.fragment
+package com.luvpets.petda.fragment.enterInfo
 
 import android.content.Context
 import android.net.Uri
@@ -15,8 +15,7 @@ import com.luvpets.petda.R
 import com.luvpets.petda.databinding.FragmentCompleteBinding
 
 class EnterCompleteFragment: Fragment() {
-  private var _binding: FragmentCompleteBinding? = null
-  private val binding get() =  _binding!!
+  private val binding by lazy { FragmentCompleteBinding.inflate(layoutInflater) }
   
   private lateinit var _context: Context
   
@@ -28,7 +27,6 @@ class EnterCompleteFragment: Fragment() {
     }
     setFragmentResultListener("petImageData") { _, bundle ->
       val imageUri = bundle.getString("petImage")
-      Log.d("imagUri", "$imageUri")
       val glide = Glide.with(this)
       glide.load(Uri.parse(imageUri)).centerCrop().circleCrop().into(binding.completedPetImage)
       binding.completedPetImage.startAnimation(AnimationUtils.loadAnimation(_context, R.anim.tongtong))
@@ -40,7 +38,6 @@ class EnterCompleteFragment: Fragment() {
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    _binding = FragmentCompleteBinding.inflate(inflater, container, false)
     
     if (container != null) {
       _context = container.context

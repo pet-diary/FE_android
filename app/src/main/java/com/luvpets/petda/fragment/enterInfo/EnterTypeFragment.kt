@@ -1,4 +1,4 @@
-package com.luvpets.petda.fragment
+package com.luvpets.petda.fragment.enterInfo
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,16 +10,13 @@ import com.luvpets.petda.R
 import com.luvpets.petda.databinding.FragmentTypeBinding
 
 class EnterTypeFragment: Fragment() {
-  private var _binding: FragmentTypeBinding? = null
-  private val binding get() = _binding!!
+  private val binding by lazy { FragmentTypeBinding.inflate(layoutInflater) }
   
   override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    _binding = FragmentTypeBinding.inflate(inflater, container, false)
-    
     handleClickMode()
     return binding.root
   }

@@ -1,7 +1,6 @@
-package com.luvpets.petda.fragment
+package com.luvpets.petda.fragment.enterInfo
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,15 +12,13 @@ import androidx.fragment.app.setFragmentResultListener
 import com.luvpets.petda.databinding.FragmentSelectPetBinding
 
 class EnterSelectPetFragment: Fragment() {
-  private var _binding: FragmentSelectPetBinding? = null
-  private val binding get() = _binding!!
+  private val binding by lazy { FragmentSelectPetBinding.inflate(layoutInflater) }
   
   override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    _binding = FragmentSelectPetBinding.inflate(inflater, container, false)
     
     handleCheck()
     return binding.root
@@ -34,7 +31,6 @@ class EnterSelectPetFragment: Fragment() {
       binding.userNameText.text = "${userName}님!"
     }
   }
-  
   private fun handleCheck() {
     val cat = binding.selectCat
     val dog = binding.selectDog
@@ -51,9 +47,5 @@ class EnterSelectPetFragment: Fragment() {
     if (item.isChecked) {
       item.isChecked = false
     }
-  }
-  override fun onDestroyView() {
-    super.onDestroyView()
-    _binding = null
   }
 }
