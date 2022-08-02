@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@drawable/bg_topline"
+  android:paddingStart="23sp"
+  android:paddingTop="18sp"
+  android:paddingEnd="23sp"
+  android:paddingBottom="18sp">
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/shareCategory"
+    android:layout_width="52sp"
+    android:backgroundTint="@null"
+    android:layout_height="20sp"
+    android:background="@drawable/btn_18r_main"
+    android:fontFamily="@font/pretendard_regular"
+    android:textColor="@color/white"
+    android:textSize="12sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="강아지" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_marginTop="6dp"
+    android:paddingEnd="20sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/shareImage"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/shareCategory"
+    tools:ignore="RtlSymmetry">
+
+    <TextView
+      android:id="@+id/shareTitle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ellipsize="end"
+      android:fontFamily="@font/pretendard_bold"
+      android:lines="1"
+      android:textColor="@color/gray_9"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toTopOf="@id/shareContent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="우리 강아지가 이런 행동을 할 때는?" />
+
+    <TextView
+      android:id="@+id/shareContent"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="6dp"
+      android:ellipsize="end"
+      android:fontFamily="@font/pretendard_regular"
+      android:lines="1"
+      android:textColor="@color/gray_6"
+      android:textSize="14sp"
+      app:layout_constraintBottom_toTopOf="@id/shareDate"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/shareTitle"
+      tools:text="반복되는 소리와 행동은 강아지를 불안하게 만들어요!!!!" />
+
+    <TextView
+      android:id="@+id/shareDate"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:fontFamily="@font/pretendard_regular"
+      android:textColor="@color/date"
+      android:textSize="13sp"
+      app:layout_constraintBottom_toTopOf="@id/shareCount"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/shareContent"
+      tools:text="2022.08.02 11:16" />
+
+    <LinearLayout
+      android:id="@+id/shareCount"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/shareDate">
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:contentDescription="@string/ic_watched"
+          android:src="@drawable/ic_watched" />
+
+        <TextView
+          android:id="@+id/shareWatchedCount"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_marginStart="4sp"
+          android:gravity="center"
+          tools:text="12345" />
+      </LinearLayout>
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_marginStart="12sp"
+        android:layout_height="wrap_content"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:contentDescription="@string/ic_liked"
+          android:src="@drawable/ic_liked" />
+
+        <TextView
+          android:id="@+id/shareLikedCount"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_marginStart="4sp"
+          android:gravity="center"
+          tools:text="12345" />
+      </LinearLayout>
+    </LinearLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <ImageView
+    android:id="@+id/shareImage"
+    android:layout_width="124sp"
+    android:layout_height="97sp"
+    android:layout_marginTop="6dp"
+    android:background="@drawable/bg_10r"
+    android:contentDescription="@string/community_share_image"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/shareCategory" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,4 +25,7 @@
   <color name="menu_color">#c4c4c4</color>
   <color name="btn_float">#f0f0f0</color>
   <color name="btn_float_text">#747474</color>
+  <color name="date">#b4b4b4</color>
+  <color name="light_main">#fff3f3</color>
+  <color name="left_line">#dadada</color>
 </resources>

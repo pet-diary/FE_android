@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="90sp"
+  android:layout_height="90sp">
+
+  <ImageView
+    android:id="@+id/shareDetailImageItem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="1.5sp"
+    android:layout_marginStart="1.5sp"
+    android:background="@drawable/bg_10r"
+    android:contentDescription="@string/community_share_image" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

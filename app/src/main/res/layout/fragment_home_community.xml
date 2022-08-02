@@ -16,11 +16,16 @@
 
     <com.google.android.material.tabs.TabLayout
       android:id="@+id/communityTab"
-      android:layout_width="175dp"
+      android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="23sp"
-      android:paddingTop="50sp"
-      app:tabGravity="fill" />
+      android:layout_marginStart="10sp"
+      android:paddingTop="25sp"
+      app:tabIconTint="@color/main"
+      app:tabIndicatorHeight="0dp"
+      app:tabInlineLabel="true"
+      app:tabSelectedTextColor="@color/gray_9"
+      app:tabTextAppearance="@style/tab_font_style"
+      app:tabTextColor="@color/gray_3" />
 
     <androidx.viewpager2.widget.ViewPager2
       android:id="@+id/communityContent"

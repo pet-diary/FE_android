@@ -37,4 +37,11 @@
   <string name="ic_paw">ic_paw</string>
   <string name="community_tab_share">정보공유</string>
   <string name="community_tab_photo">자랑하기</string>
+  <string name="community_share_image">정보 공유 아이템 이미지</string>
+  <string name="ic_watched">ic_watched</string>
+  <string name="ic_liked">ic_liked</string>
+  <string name="loading">loading…</string>
+  <string name="community_detail_age">나이</string>
+  <string name="community_detail_weight">몸무게</string>
+  <string name="community_detail_breed">품종</string>
 </resources>

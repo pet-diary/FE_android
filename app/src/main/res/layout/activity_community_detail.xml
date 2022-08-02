@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".activities.CommunityDetailActivity">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="64dp">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:layout_marginStart="15dp"
+      android:background="@color/white"
+      android:src="@drawable/ic_arrow_left"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="RtlSymmetry" />
+
+    <TextView
+      android:id="@+id/communityDetailTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/pretendard_regular"
+      android:textColor="@color/gray_9"
+      android:textSize="17sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="정보공유" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+      android:id="@+id/btnMoreMenu"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="22dp"
+      android:background="@color/white"
+      android:src="@drawable/ic_more_menu"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="RtlSymmetry" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.fragment.app.FragmentContainerView
+    android:id="@+id/communityDetailContent"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1" />
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+    android:id="@+id/homeNavigation"
+    android:layout_width="match_parent"
+    android:layout_height="80sp"
+    android:background="@color/white"
+    app:itemBackground="@color/white"
+    app:itemIconTint="@drawable/btn_selector_home_menu"
+    app:labelVisibilityMode="unlabeled"
+    app:menu="@menu/home_menu" />
+
+</LinearLayout>

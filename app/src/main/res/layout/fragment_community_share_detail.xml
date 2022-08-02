@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <LinearLayout
+    android:id="@+id/loadingContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="-64sp"
+    tools:ignore="UseCompoundDrawables">
+
+    <ImageView
+      android:id="@+id/loadingPaw"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:contentDescription="@string/ic_paw"
+      android:src="@drawable/ic_float_paw" />
+
+    <TextView
+      android:id="@+id/loadingText"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5sp"
+      android:fontFamily="@font/pretendard_bold"
+      android:text="@string/loading"
+      android:textColor="@color/main"
+      android:textSize="16sp" />
+  </LinearLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/detailContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="24sp"
+    android:paddingEnd="24sp"
+    android:paddingBottom="33sp">
+
+    <LinearLayout
+      android:id="@+id/shareDetailTop"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="9sp"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toTopOf="@id/shareDetailSummary"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/shareCategory"
+        android:layout_width="52sp"
+        android:layout_height="20sp"
+        android:background="@drawable/btn_18r_main"
+        android:backgroundTint="@null"
+        android:fontFamily="@font/pretendard_regular"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        tools:text="강아지" />
+
+      <TextView
+        android:id="@+id/shareTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6sp"
+        android:fontFamily="@font/pretendard_bold"
+        android:textColor="@color/gray_9"
+        android:textSize="18sp"
+        tools:text="우리 강아지가 이런 행동을 할때는?" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/shareDetailSummary"
+      android:layout_width="match_parent"
+      android:layout_height="80sp"
+      android:layout_marginTop="25sp"
+      android:background="@drawable/bg_21r_light_main"
+      android:paddingStart="23sp"
+      android:paddingTop="10sp"
+      android:paddingBottom="10sp"
+      app:layout_constraintBottom_toTopOf="@id/shareContent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/shareDetailTop"
+      tools:ignore="RtlSymmetry">
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+          android:layout_width="34sp"
+          android:layout_height="34sp"
+          android:background="@color/gray_2" />
+
+        <TextView
+          android:id="@+id/sharePetName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="6sp"
+          android:fontFamily="@font/pretendard_bold"
+          android:gravity="center"
+          android:textColor="@color/gray_7"
+          android:textSize="12sp"
+          tools:text="가을" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="13sp"
+        android:baselineAligned="false">
+
+        <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:orientation="vertical"
+          android:paddingStart="6sp"
+          android:paddingEnd="6sp"
+          tools:ignore="UselessParent">
+
+          <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:gravity="center"
+            android:text="@string/community_detail_age"
+            android:textColor="@color/gray_6"
+            android:textSize="12sp" />
+
+          <TextView
+            android:id="@+id/sharePetBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:fontFamily="@font/pretendard_bold"
+            android:gravity="center"
+            android:textColor="@color/gray_7"
+            android:textSize="12sp"
+            tools:text="2019.07.15\n(3살)" />
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="@drawable/bg_leftline"
+          android:orientation="vertical"
+          android:paddingStart="6sp"
+          android:paddingEnd="6sp"
+          tools:ignore="UselessParent">
+
+          <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:gravity="center"
+            android:text="@string/community_detail_weight"
+            android:textColor="@color/gray_6"
+            android:textSize="12sp" />
+
+          <TextView
+            android:id="@+id/sharePetWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:fontFamily="@font/pretendard_bold"
+            android:gravity="center"
+            android:textColor="@color/gray_7"
+            android:textSize="12sp"
+            tools:text="6kg\n" />
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="@drawable/bg_leftline"
+          android:orientation="vertical"
+          android:paddingStart="6sp"
+          android:paddingEnd="6sp"
+          tools:ignore="UselessParent">
+
+          <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:gravity="center"
+            android:text="@string/community_detail_breed"
+            android:textColor="@color/gray_6"
+            android:textSize="12sp" />
+
+          <TextView
+            android:id="@+id/sharePetBreed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:fontFamily="@font/pretendard_bold"
+            android:gravity="center"
+            android:textColor="@color/gray_7"
+            android:textSize="12sp"
+            tools:text="스노우슈\n" />
+        </LinearLayout>
+      </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/shareContent"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="9sp"
+      android:fontFamily="@font/pretendard_regular"
+      android:maxHeight="330sp"
+      android:paddingStart="15sp"
+      android:paddingEnd="15sp"
+      android:textColor="@color/gray_9"
+      android:textSize="14sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/shareDetailSummary"
+      tools:text="컨텐츠" />
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/shareDetailImageList"
+      android:layout_width="match_parent"
+      android:layout_height="90sp"
+      android:layout_marginStart="-1.5sp"
+      android:layout_marginEnd="-1.5sp"
+      android:layout_marginBottom="17sp"
+      android:orientation="horizontal"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      app:layout_constraintBottom_toTopOf="@id/shareDetailUtils"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+      android:id="@+id/shareDetailUtils"
+      android:layout_width="match_parent"
+      android:layout_height="33sp"
+      android:gravity="end"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent">
+
+      <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:src="@drawable/ic_liked" />
+
+      <TextView
+        android:id="@+id/shareLiked"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4sp"
+        android:fontFamily="@font/pretendard_regular"
+        android:gravity="center"
+        android:textColor="@color/gray_6"
+        android:textSize="12sp"
+        tools:text="3" />
+
+      <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="12sp"
+        android:background="@color/white"
+        android:src="@drawable/ic_report" />
+    </LinearLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
