@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="80sp"
+  android:background="@drawable/bg_21r_light_main"
+  android:paddingStart="23sp"
+  android:paddingTop="10sp"
+  android:paddingBottom="10sp"
+  tools:ignore="RtlSymmetry"
+  xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:orientation="vertical"
+      tools:ignore="UselessParent">
+
+      <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/sharePetImage"
+        android:layout_width="34sp"
+        android:layout_height="34sp"
+        android:background="@color/gray_2" />
+
+      <TextView
+        android:id="@+id/sharePetName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6sp"
+        android:fontFamily="@font/pretendard_bold"
+        android:gravity="center"
+        android:textColor="@color/gray_7"
+        android:textSize="12sp"
+        tools:text="가을" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginStart="13sp"
+      android:baselineAligned="false">
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="6sp"
+        android:paddingEnd="6sp"
+        tools:ignore="UselessParent">
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/pretendard_regular"
+          android:gravity="center"
+          android:text="@string/community_detail_age"
+          android:textColor="@color/gray_6"
+          android:textSize="12sp" />
+
+        <TextView
+          android:id="@+id/sharePetBirth"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8sp"
+          android:fontFamily="@font/pretendard_bold"
+          android:gravity="center"
+          android:textColor="@color/gray_7"
+          android:textSize="12sp"
+          tools:text="2019.07.15\n(3살)" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_leftline"
+        android:orientation="vertical"
+        android:paddingStart="6sp"
+        android:paddingEnd="6sp"
+        tools:ignore="UselessParent">
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/pretendard_regular"
+          android:gravity="center"
+          android:text="@string/community_detail_weight"
+          android:textColor="@color/gray_6"
+          android:textSize="12sp" />
+
+        <TextView
+          android:id="@+id/sharePetWeight"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8sp"
+          android:fontFamily="@font/pretendard_bold"
+          android:gravity="center"
+          android:textColor="@color/gray_7"
+          android:textSize="12sp"
+          tools:text="6kg\n" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_leftline"
+        android:orientation="vertical"
+        android:paddingStart="6sp"
+        android:paddingEnd="6sp"
+        tools:ignore="UselessParent">
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/pretendard_regular"
+          android:gravity="center"
+          android:text="@string/community_detail_breed"
+          android:textColor="@color/gray_6"
+          android:textSize="12sp" />
+
+        <TextView
+          android:id="@+id/sharePetBreed"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8sp"
+          android:fontFamily="@font/pretendard_bold"
+          android:gravity="center"
+          android:textColor="@color/gray_7"
+          android:textSize="12sp"
+          tools:text="스노우슈\n" />
+      </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

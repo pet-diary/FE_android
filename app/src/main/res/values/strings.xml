@@ -44,4 +44,9 @@
   <string name="community_detail_age">나이</string>
   <string name="community_detail_weight">몸무게</string>
   <string name="community_detail_breed">품종</string>
+  <string name="input_title_hint">제목을 입력하세요</string>
+  <string name="input_content_hint">내용을 입력하세요</string>
+  <string name="community_post">꿀팁 입력 완료</string>
+  <string name="tag">태그</string>
+  <string name="post_image_btn">사진등록</string>
 </resources>

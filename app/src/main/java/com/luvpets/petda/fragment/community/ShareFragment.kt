@@ -16,6 +16,8 @@ import com.luvpets.petda.activities.CommunityDetailActivity
 import com.luvpets.petda.adapter.CommunityShareAdapter
 import com.luvpets.petda.databinding.FragmentCommunityShareBinding
 import com.luvpets.petda.dto.ShareDto
+import com.luvpets.petda.model.PetInfoEntity
+import com.luvpets.petda.room.PetInfoDB
 import com.luvpets.petda.service.Instance
 import com.luvpets.petda.service.ShareService
 import retrofit2.Call
@@ -71,6 +73,13 @@ class ShareFragment: Fragment() {
             response.body()?.let { dto ->
               shareAdapter.submitList(dto.items)
             }
+  
+            val r = Runnable {
+              val tempEntity = PetInfoEntity(0, "", "가을", "2019.07.15", 3, 6, "스노우슈")
+              context?.let { it1 -> PetInfoDB.getInstance(it1).dao().addPetInfo(tempEntity) }
+            }
+            val thread = Thread(r)
+            thread.start()
           }
   
           // 실패시

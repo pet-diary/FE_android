@@ -28,4 +28,10 @@
   <color name="date">#b4b4b4</color>
   <color name="light_main">#fff3f3</color>
   <color name="left_line">#dadada</color>
+  <color name="category_dog_bg">#fffdd7</color>
+  <color name="category_dog_text">#ffae35</color>
+  <color name="category_cat_bg">#e4f9ff</color>
+  <color name="category_cat_text">#3586ff</color>
+  <color name="hint">#aaaaaa</color>
+  <color name="content_hint">#c9c9c9</color>
 </resources>

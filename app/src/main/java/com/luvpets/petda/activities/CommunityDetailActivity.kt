@@ -22,17 +22,20 @@ class CommunityDetailActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(binding.root)
   
+    // TODO : 추후 아이템 id로 api 통신
     itemId = intent.getStringExtra("selectedShareItem").toString()
     fragmentType = intent.getStringExtra("fragmentType").toString()
     
     initFragment()
     handleBottomNavigation()
+    handleClickBack()
   }
   
   private fun initFragment() {
     when(fragmentType) {
       "shareDetail" -> changeFragment(ShareDetailFragment(), "정보공유")
-      else -> changeFragment(ShareWriteFragment(), "정보작성")
+      "sharePost" -> changeFragment(ShareWriteFragment(), "정보작성")
+      else -> changeFragment(ShareWriteFragment(), "자랑하기")
     }
   }
   private fun changeFragment(fragment: Fragment, title: String) {
@@ -49,6 +52,11 @@ class CommunityDetailActivity : AppCompatActivity() {
       overridePendingTransition(0,0)
       startActivity(intent)
       true
+    }
+  }
+  private fun handleClickBack() {
+    binding.btnBack.setOnClickListener {
+      onBackPressed()
     }
   }
 }

@@ -6,9 +6,9 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface ShareService {
-  @GET("/v3/7f31a8d5-4fcf-491b-8a47-120c7617aa23")
+  @GET("/v3/85c4fc0f-97a4-4cdc-acd1-4f4f79cb51a8")
   fun getShareList() : Call<ShareDto>
   
-  @GET("/v3/a0a7944c-6442-42ad-bf2a-cda17cef06af")
+  @GET("/v3/fcd7863d-d58b-4f1c-9a0a-2ba90ddf6fd4")
   fun getShareDetail() : Call<ShareDetailModel>
 }
