@@ -74,7 +74,6 @@ class ShareWriteFragment: Fragment() {
     binding.shareIncludePetInfo.sharePetBreed.text = petInfo.breed
     
     val image = binding.shareIncludePetInfo.sharePetImage
-    Log.d("petInfo", "$petInfo")
     Glide.with(image.context)
       .load(petInfo.image)
       .transform(CenterCrop(), CircleCrop())

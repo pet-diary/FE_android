@@ -49,4 +49,6 @@
   <string name="community_post">꿀팁 입력 완료</string>
   <string name="tag">태그</string>
   <string name="post_image_btn">사진등록</string>
+  <string name="user_profile">유저프로필</string>
+  <string name="community_photo">community_photo</string>
 </resources>

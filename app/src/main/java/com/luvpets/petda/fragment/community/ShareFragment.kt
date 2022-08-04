@@ -1,16 +1,12 @@
 package com.luvpets.petda.fragment.community
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.luvpets.petda.R
 import com.luvpets.petda.activities.CommunityDetailActivity
 import com.luvpets.petda.adapter.CommunityShareAdapter
@@ -23,8 +19,6 @@ import com.luvpets.petda.service.ShareService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class ShareFragment: Fragment() {
   private val binding by lazy { FragmentCommunityShareBinding.inflate(layoutInflater) }
@@ -53,8 +47,8 @@ class ShareFragment: Fragment() {
   }
   
   private fun initLoadingAnimation() {
-    loadingContent.visibility = View.VISIBLE
-    binding.loadingPaw.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.loading_paw))
+    loadingContent.loadingContent.visibility = View.VISIBLE
+    binding.loadingContent.loadingPaw.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.loading_paw))
   }
   private fun getShareListFromApi() {
     // retrofit 생성
@@ -66,10 +60,8 @@ class ShareFragment: Fragment() {
         .enqueue(object: Callback<ShareDto> {
           // 성공시
           override fun onResponse(call: Call<ShareDto>, response: Response<ShareDto>) {
-            if (response.isSuccessful.not()) {
-              return
-            }
-            loadingContent.visibility = View.GONE
+            if (response.isSuccessful.not()) return
+            loadingContent.loadingContent.visibility = View.GONE
             response.body()?.let { dto ->
               shareAdapter.submitList(dto.items)
             }
@@ -84,7 +76,7 @@ class ShareFragment: Fragment() {
   
           // 실패시
           override fun onFailure(call: Call<ShareDto>, t: Throwable) {
-            binding.loadingText.text = "데이터 로드에 실패했습니다."
+            binding.loadingContent.loadingText.text = "데이터 로드에 실패했습니다."
           }
         })
     }

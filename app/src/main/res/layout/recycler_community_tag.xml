@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_height="wrap_content">
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/communityTag"
+    android:layout_width="52sp"
+    android:backgroundTint="@null"
+    android:layout_height="20sp"
+    style="?android:attr/borderlessButtonStyle"
+    android:background="@drawable/btn_18r_default"
+    android:fontFamily="@font/pretendard_regular"
+    android:textColor="@color/gray_9"
+    android:textSize="12sp"
+    android:layout_marginStart="2.5sp"
+    android:layout_marginEnd="2.5sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="강아지" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

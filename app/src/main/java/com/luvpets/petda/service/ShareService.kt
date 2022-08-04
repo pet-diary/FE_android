@@ -1,5 +1,6 @@
 package com.luvpets.petda.service
 
+import com.luvpets.petda.dto.PhotoDto
 import com.luvpets.petda.dto.ShareDto
 import com.luvpets.petda.model.ShareDetailModel
 import retrofit2.Call
@@ -11,4 +12,7 @@ interface ShareService {
   
   @GET("/v3/fcd7863d-d58b-4f1c-9a0a-2ba90ddf6fd4")
   fun getShareDetail() : Call<ShareDetailModel>
+  
+  @GET("/v3/a8ae11e9-1947-49ce-8d3a-c59f69280662")
+  fun getPhotoList() : Call<PhotoDto>
 }
