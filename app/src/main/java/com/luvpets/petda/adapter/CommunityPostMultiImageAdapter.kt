@@ -1,5 +1,7 @@
 package com.luvpets.petda.adapter
 
+import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,15 +13,14 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.luvpets.petda.R
-import com.luvpets.petda.model.ShareDetailImagesModel
 import com.luvpets.petda.util.DpToPx
 
-class CommunityShareImageAdapter(): ListAdapter<ShareDetailImagesModel, CommunityShareImageAdapter.ViewHolder>(differ) {
+class CommunityPostMultiImageAdapter : ListAdapter<Uri, CommunityPostMultiImageAdapter.ViewHolder>(differ) {
   inner class ViewHolder(val view: View): RecyclerView.ViewHolder(view) {
-    fun bind(imageModel: ShareDetailImagesModel) {
+    fun bind(imageModel: Uri) {
       val image = view.findViewById<ImageView>(R.id.shareDetailImageItem)
       Glide.with(image.context)
-        .load(imageModel.image)
+        .load(imageModel)
         .transform(CenterCrop(), RoundedCorners(DpToPx().dpToPx(image.context, 10)))
         .into(image)
     }
@@ -35,17 +36,17 @@ class CommunityShareImageAdapter(): ListAdapter<ShareDetailImagesModel, Communit
   }
   
   companion object {
-    val differ = object: DiffUtil.ItemCallback<ShareDetailImagesModel>() {
+    val differ = object: DiffUtil.ItemCallback<Uri>() {
       override fun areItemsTheSame(
-        oldItem: ShareDetailImagesModel,
-        newItem: ShareDetailImagesModel
+        oldItem: Uri,
+        newItem: Uri
       ): Boolean {
         return oldItem == newItem
       }
   
       override fun areContentsTheSame(
-        oldItem: ShareDetailImagesModel,
-        newItem: ShareDetailImagesModel
+        oldItem: Uri,
+        newItem: Uri
       ): Boolean {
         return oldItem == newItem
       }
