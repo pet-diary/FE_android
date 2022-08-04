@@ -34,4 +34,9 @@
   <color name="category_cat_text">#3586ff</color>
   <color name="hint">#aaaaaa</color>
   <color name="content_hint">#c9c9c9</color>
+  <color name="sat">#698aff</color>
+  <color name="sun">#ff8383</color>
+  <color name="day">#606060</color>
+  <color name="calendar_bg">#fff8f8</color>
+  <color name="calender_border">#dcdcdc</color>
 </resources>

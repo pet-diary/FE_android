@@ -51,4 +51,13 @@
   <string name="post_image_btn">사진등록</string>
   <string name="user_profile">유저프로필</string>
   <string name="community_photo">community_photo</string>
+  <string name="pet_image">pet_image</string>
+  <string name="btn_arrow">btn_arrow</string>
+  <string name="monday">Mon</string>
+  <string name="tuesday">Tue</string>
+  <string name="wednesday">Wed</string>
+  <string name="thursday">Thu</string>
+  <string name="friday">Fri</string>
+  <string name="saturday">Sat</string>
+  <string name="sunday">Sun</string>
 </resources>
