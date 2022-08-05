@@ -60,4 +60,14 @@
   <string name="friday">Fri</string>
   <string name="saturday">Sat</string>
   <string name="sunday">Sun</string>
+  <string name="calender_record_item">calender record item</string>
+  <string name="add_record_text">추가</string>
+  <string name="feed">사료</string>
+  <string name="snack">간식</string>
+  <string name="water">물</string>
+  <string name="water_changed">물갈이</string>
+  <string name="poo">대변</string>
+  <string name="pee">소변</string>
+  <string name="pill">건강</string>
+  <string name="beauty">미용</string>
 </resources>

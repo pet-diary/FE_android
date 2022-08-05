@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/bg_calender_day"
+  android:maxHeight="83sp"
+  android:orientation="vertical"
+  android:padding="4sp">
+
+  <LinearLayout
+    android:id="@+id/firstRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="4sp"
+    android:paddingEnd="4sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+      android:id="@+id/calendarDay"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:fontFamily="@font/pretendard_regular"
+      android:gravity="center"
+      android:letterSpacing="-0.08"
+      android:paddingTop="1sp"
+      android:paddingBottom="2sp"
+      android:textColor="@color/gray_8"
+      android:textSize="9sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="SmallSp"
+      tools:text="1" />
+
+    <ImageView
+      android:id="@+id/alert"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:contentDescription="@string/calender_record_item"
+      android:src="@drawable/ic_calendar_alert"
+      android:visibility="invisible"
+      app:layout_constraintEnd_toStartOf="@id/walk"
+      app:layout_constraintStart_toEndOf="@id/calendarDay"
+      app:layout_constraintTop_toTopOf="@id/calendarDay" />
+
+    <ImageView
+      android:id="@+id/walk"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:contentDescription="@string/calender_record_item"
+      android:src="@drawable/ic_calendar_walk"
+      android:visibility="invisible" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/secondRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="4sp"
+    android:paddingEnd="4sp"
+    app:layout_constraintBottom_toTopOf="@id/thirdRow"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/firstRow">
+
+    <ImageView
+      android:id="@+id/water"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:contentDescription="@string/calender_record_item"
+      android:src="@drawable/ic_calendar_water"
+      android:visibility="invisible"
+      app:layout_constraintStart_toEndOf="@id/calendarDay"
+      app:layout_constraintTop_toTopOf="@id/calendarDay" />
+
+    <View
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_weight="1" />
+
+    <ImageView
+      android:id="@+id/beauty"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:contentDescription="@string/calender_record_item"
+      android:src="@drawable/ic_calendar_beauty"
+      android:visibility="invisible" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/thirdRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="4sp"
+    android:paddingEnd="4sp"
+    app:layout_constraintBottom_toTopOf="@id/lastRow"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/secondRow">
+
+    <ImageView
+      android:id="@+id/pee"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:contentDescription="@string/calender_record_item"
+      android:src="@drawable/ic_calendar_pee"
+      android:visibility="invisible"
+      app:layout_constraintStart_toEndOf="@id/calendarDay"
+      app:layout_constraintTop_toTopOf="@id/calendarDay" />
+
+    <View
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_weight="1" />
+
+    <ImageView
+      android:id="@+id/feed"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:contentDescription="@string/calender_record_item"
+      android:src="@drawable/ic_calendar_feed"
+      android:visibility="invisible" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/lastRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="4sp"
+    android:paddingEnd="4sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <ImageView
+      android:id="@+id/pill"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:contentDescription="@string/calender_record_item"
+      android:src="@drawable/ic_calendar_pill"
+      android:visibility="invisible"
+      app:layout_constraintStart_toEndOf="@id/calendarDay"
+      app:layout_constraintTop_toTopOf="@id/calendarDay" />
+
+    <View
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_weight="1" />
+
+    <ImageView
+      android:id="@+id/poo"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:contentDescription="@string/calender_record_item"
+      android:src="@drawable/ic_calendar_poo"
+      android:visibility="invisible" />
+  </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

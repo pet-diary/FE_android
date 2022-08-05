@@ -2,10 +2,11 @@ package com.luvpets.petda.util
 
 import android.annotation.SuppressLint
 import java.time.LocalDate
+import java.util.*
 
 class CalendarUtil {
   companion object{
     @SuppressLint("NewApi")
-    var selectedDate: LocalDate = LocalDate.now()
+    var selectedDate: Calendar = Calendar.getInstance()
   }
 }

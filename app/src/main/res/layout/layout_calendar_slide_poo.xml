@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@drawable/underline"
+  android:orientation="vertical"
+  android:paddingStart="23sp"
+  android:paddingTop="5sp"
+  android:paddingEnd="23sp"
+  android:paddingBottom="18sp">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="40sp"
+    android:gravity="center">
+
+    <ImageView
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:contentDescription="@string/calender_record_item"
+      android:src="@drawable/ic_calendar_poo" />
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8sp"
+      android:layout_weight="1"
+      android:fontFamily="@font/pretendard_bold"
+      android:letterSpacing="-0.041"
+      android:text="@string/poo"
+      android:textColor="@color/gray_9"
+      android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:layout_gravity="center"
+      android:background="@null"
+      android:src="@drawable/ic_arrow_top" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4sp">
+
+    <LinearLayout
+      android:layout_width="103dp"
+      android:layout_height="34dp"
+      android:background="@drawable/btn_35r_outline"
+      android:gravity="center"
+      android:paddingStart="7dp"
+      android:paddingTop="5dp"
+      android:paddingEnd="7dp"
+      android:paddingBottom="5dp">
+
+      <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/ic_minus" />
+
+      <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/pretendard_regular"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/gray_9"
+        android:textSize="14sp"
+        tools:ignore="HardcodedText" />
+
+      <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/ic_plus" />
+    </LinearLayout>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginStart="8dp"
+      android:fontFamily="@font/pretendard_regular"
+      android:text="회"
+      android:textColor="@color/gray_9"
+      android:textSize="14sp"
+      tools:ignore="HardcodedText,SpUsage" />
+
+  </LinearLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6sp">
+
+    <LinearLayout
+      android:id="@+id/pooOption1"
+      android:layout_width="wrap_content"
+      android:layout_height="34dp"
+      android:background="@drawable/btn_35r_outline"
+      android:gravity="center"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="UselessParent">
+
+      <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:src="#7B6019" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8sp"
+        android:gravity="center"
+        android:letterSpacing="-0.08"
+        android:text="갈색"
+        android:textColor="@color/gray_9"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/pooOption2"
+      android:layout_width="wrap_content"
+      android:layout_height="34dp"
+      android:layout_marginStart="8sp"
+      android:background="@drawable/btn_35r_outline"
+      android:gravity="center"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      app:layout_constraintStart_toEndOf="@id/pooOption1"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="UselessParent">
+
+      <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:src="#756f69" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8sp"
+        android:gravity="center"
+        android:letterSpacing="-0.08"
+        android:text="회색"
+        android:textColor="@color/gray_9"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/pooOption3"
+      android:layout_width="wrap_content"
+      android:layout_height="34dp"
+      android:layout_marginStart="8sp"
+      android:background="@drawable/btn_35r_outline"
+      android:gravity="center"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      app:layout_constraintStart_toEndOf="@id/pooOption2"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="UselessParent">
+
+      <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:src="#d3b055" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8sp"
+        android:gravity="center"
+        android:letterSpacing="-0.08"
+        android:text="노란색"
+        android:textColor="@color/gray_9"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3sp">
+
+    <LinearLayout
+      android:id="@+id/pooOption4"
+      android:layout_width="wrap_content"
+      android:layout_height="34dp"
+      android:background="@drawable/btn_35r_outline"
+      android:gravity="center"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="UselessParent">
+
+      <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:src="#e2a051" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8sp"
+        android:gravity="center"
+        android:letterSpacing="-0.08"
+        android:text="주황색"
+        android:textColor="@color/gray_9"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/pooOption5"
+      android:layout_width="wrap_content"
+      android:layout_height="34dp"
+      android:layout_marginStart="8sp"
+      android:background="@drawable/btn_35r_outline"
+      android:gravity="center"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      app:layout_constraintStart_toEndOf="@id/pooOption4"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="UselessParent">
+
+      <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:src="#ee6161" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8sp"
+        android:gravity="center"
+        android:letterSpacing="-0.08"
+        android:text="혈변"
+        android:textColor="@color/gray_9"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/pooOption6"
+      android:layout_width="wrap_content"
+      android:layout_height="34dp"
+      android:layout_marginStart="8sp"
+      android:background="@drawable/btn_35r_outline"
+      android:gravity="center"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      app:layout_constraintStart_toEndOf="@id/pooOption5"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="UselessParent">
+
+      <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:src="#7655d3" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8sp"
+        android:gravity="center"
+        android:letterSpacing="-0.08"
+        android:text="보라색"
+        android:textColor="@color/gray_9"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+      tools:ignore="UseCompoundDrawables"
+      android:layout_width="match_parent"
+      android:layout_height="40dp">
+
+      <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/calender_record_item"
+        android:src="@drawable/ic_calendar_poo" />
+
+      <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8sp"
+        android:layout_weight="1"
+        android:fontFamily="@font/pretendard_bold"
+        android:letterSpacing="-0.041"
+        android:text="모래갈이"
+        android:textColor="@color/gray_9"
+        android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="4dp"
+      android:background="@drawable/btn_35r_outline"
+      android:paddingStart="16dp"
+      android:paddingTop="5dp"
+      android:paddingEnd="16dp"
+      android:paddingBottom="5dp">
+
+      <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/ic_checkbox" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/pretendard_regular"
+        android:gravity="center"
+        android:letterSpacing="-0.08"
+        android:text="모래갈이"
+        android:textColor="@color/gray_9"
+        android:textSize="14sp" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</LinearLayout>

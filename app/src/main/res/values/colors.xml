@@ -39,4 +39,5 @@
   <color name="day">#606060</color>
   <color name="calendar_bg">#fff8f8</color>
   <color name="calender_border">#dcdcdc</color>
+  <color name="comment">#787878</color>
 </resources>

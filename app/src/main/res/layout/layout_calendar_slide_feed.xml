@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@drawable/underline"
+  android:orientation="vertical"
+  android:paddingStart="23sp"
+  android:paddingEnd="23sp"
+  android:paddingBottom="10sp">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="40sp"
+      android:gravity="center">
+
+      <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="@string/calender_record_item"
+        android:src="@drawable/ic_calendar_feed" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8sp"
+        android:fontFamily="@font/pretendard_bold"
+        android:letterSpacing="-0.041"
+        android:text="@string/feed"
+        android:textColor="@color/gray_9"
+        android:textSize="16sp" />
+
+      <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/pretendard_regular"
+        android:letterSpacing="-0.08"
+        android:text="사료를 등록해주세요 +"
+        android:textColor="@color/comment"
+        android:textSize="13sp"
+        tools:ignore="HardcodedText" />
+
+      <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:src="@drawable/ic_arrow_top" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="4dp">
+
+      <TextView
+        android:id="@+id/feedOption1"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:background="@drawable/btn_35r_outline"
+        android:gravity="center"
+        android:letterSpacing="-0.08"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="안먹음"
+        android:textColor="@color/gray_9"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+
+      <TextView
+        android:id="@+id/feedOption2"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:background="@drawable/btn_35r_outline"
+        android:gravity="center"
+        android:letterSpacing="-0.08"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="적게먹음"
+        android:textColor="@color/gray_9"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/feedOption3"
+        app:layout_constraintStart_toEndOf="@id/feedOption1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+
+      <TextView
+        android:id="@+id/feedOption3"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:background="@drawable/btn_35r_outline"
+        android:gravity="center"
+        android:letterSpacing="-0.08"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="평소대로 먹음"
+        android:textColor="@color/gray_9"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/feedOption4"
+        app:layout_constraintStart_toEndOf="@id/feedOption2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+
+      <TextView
+        android:id="@+id/feedOption4"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:background="@drawable/btn_35r_outline"
+        android:gravity="center"
+        android:letterSpacing="-0.08"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="많이 먹음"
+        android:textColor="@color/gray_9"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="40sp"
+      tools:ignore="UseCompoundDrawables">
+
+      <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="@string/calender_record_item"
+        android:src="@drawable/ic_calender_snack" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8sp"
+        android:fontFamily="@font/pretendard_bold"
+        android:letterSpacing="-0.041"
+        android:text="@string/snack"
+        android:textColor="@color/gray_9"
+        android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="4sp">
+
+      <LinearLayout
+        android:layout_width="103dp"
+        android:layout_height="34dp"
+        android:background="@drawable/btn_35r_outline"
+        android:gravity="center"
+        android:paddingStart="7dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="7dp"
+        android:paddingBottom="5dp">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@null"
+          android:src="@drawable/ic_minus" />
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:fontFamily="@font/pretendard_regular"
+          android:gravity="center"
+          android:text="1"
+          android:textColor="@color/gray_9"
+          android:textSize="14sp"
+          tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@null"
+          android:src="@drawable/ic_plus" />
+      </LinearLayout>
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/pretendard_regular"
+        android:text="회"
+        android:textColor="@color/gray_9"
+        android:textSize="14sp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</LinearLayout>

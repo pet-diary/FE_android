@@ -7,15 +7,15 @@
   android:layout_height="match_parent"
   android:gravity="bottom"
   app:umanoOverlay="true"
-  app:umanoPanelHeight="78sp"
-  app:umanoScrollableView="@id/recyclerBreedList"
-  app:umanoShadowHeight="2sp">
+  app:umanoPanelHeight="0dp"
+  app:umanoScrollableView="@id/calendarSlideInner"
+  app:umanoShadowHeight="0.5sp">
 
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="48sp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingTop="48sp">
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -46,10 +46,10 @@
           android:src="@drawable/ic_arrow_left_24" />
 
         <TextView
-          android:layout_marginTop="-1.5sp"
           android:id="@+id/currentMonth"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="-1.5sp"
           android:fontFamily="@font/pretendard_bold"
           android:letterSpacing="-0.08"
           android:textColor="@color/gray_9"
@@ -69,8 +69,8 @@
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="0dp"
-      android:layout_weight="1"
       android:layout_marginBottom="31sp"
+      android:layout_weight="1"
       android:orientation="vertical">
 
       <LinearLayout
@@ -164,17 +164,42 @@
         android:layout_height="match_parent" />
     </LinearLayout>
 
-    <View
-      android:background="@color/gray_2"
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/calendarSlidePanel"
       android:layout_width="match_parent"
       android:layout_height="78sp"
-      android:layout_gravity="bottom"/>
+      android:orientation="vertical"
+      android:elevation="20dp"
+      android:paddingStart="24dp"
+      android:paddingEnd="24dp"
+      android:background="@drawable/bg_slide"
+      android:layout_gravity="bottom">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/pretendard_bold"
+          android:textColor="@color/gray_9"
+          android:textSize="13sp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:text="9월 1일 (수)" />
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/pretendard_bold"
+          android:letterSpacing="-0.024"
+          android:text="@string/add_record_text"
+          android:textColor="@color/main"
+          android:textSize="18sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+      </androidx.constraintlayout.widget.ConstraintLayout>
   </LinearLayout>
 
-  <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <include layout="@layout/layout_calendar_slide" />
 
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>
