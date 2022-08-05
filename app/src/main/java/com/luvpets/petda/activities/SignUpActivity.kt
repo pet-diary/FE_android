@@ -4,11 +4,9 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.TextView
 import androidx.core.widget.addTextChangedListener
 import com.luvpets.petda.R
 import com.luvpets.petda.databinding.ActivitySignUpBinding
@@ -103,7 +101,7 @@ class SignUpActivity : AppCompatActivity() {
   }
   private fun handleUtil() {
     binding.btnNextPage.setOnClickListener {
-      val intent = Intent(this, EnterMyInfo::class.java)
+      val intent = Intent(this, EnterUserInfoActivity::class.java)
       startActivity(intent)
     }
   }

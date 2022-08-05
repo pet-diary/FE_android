@@ -1,4 +1,4 @@
-package com.luvpets.petda.model
+package com.luvpets.petda.data.model
 
 data class ShareModel(
   val id: String,

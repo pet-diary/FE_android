@@ -8,11 +8,10 @@ import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import com.luvpets.petda.R
 import com.luvpets.petda.adapter.CommunityPhotoAdapter
-import com.luvpets.petda.adapter.CommunityPhotoTagAdapter
 import com.luvpets.petda.databinding.FragmentCommunityPhotoBinding
 import com.luvpets.petda.dto.PhotoDto
-import com.luvpets.petda.service.Instance
-import com.luvpets.petda.service.ShareService
+import com.luvpets.petda.data.service.Instance
+import com.luvpets.petda.data.service.ShareService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

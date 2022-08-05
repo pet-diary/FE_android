@@ -12,10 +12,10 @@ import com.luvpets.petda.activities.CommunityDetailActivity
 import com.luvpets.petda.adapter.CommunityShareAdapter
 import com.luvpets.petda.databinding.FragmentCommunityShareBinding
 import com.luvpets.petda.dto.ShareDto
-import com.luvpets.petda.model.PetInfoEntity
+import com.luvpets.petda.data.model.PetInfoEntity
 import com.luvpets.petda.room.PetInfoDB
-import com.luvpets.petda.service.Instance
-import com.luvpets.petda.service.ShareService
+import com.luvpets.petda.data.service.Instance
+import com.luvpets.petda.data.service.ShareService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

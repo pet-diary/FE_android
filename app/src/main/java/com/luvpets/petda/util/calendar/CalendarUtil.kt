@@ -1,7 +1,7 @@
-package com.luvpets.petda.util
+package com.luvpets.petda.util.calendar
 
 import android.annotation.SuppressLint
-import java.time.LocalDate
+import android.view.View
 import java.util.*
 
 class CalendarUtil {
@@ -9,4 +9,8 @@ class CalendarUtil {
     @SuppressLint("NewApi")
     var selectedDate: Calendar = Calendar.getInstance()
   }
+}
+
+interface OnItemListener {
+  fun onItemClick(dayText: String)
 }

@@ -1,6 +1,5 @@
 package com.luvpets.petda.adapter
 
-import android.content.Context
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.luvpets.petda.R
-import com.luvpets.petda.util.DpToPx
+import com.luvpets.petda.util.share.DpToPx
 
 class CommunityPostMultiImageAdapter : ListAdapter<Uri, CommunityPostMultiImageAdapter.ViewHolder>(differ) {
   inner class ViewHolder(val view: View): RecyclerView.ViewHolder(view) {

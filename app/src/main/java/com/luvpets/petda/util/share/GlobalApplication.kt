@@ -1,4 +1,4 @@
-package com.luvpets.petda.util
+package com.luvpets.petda.util.share
 
 import android.app.Application
 import com.kakao.sdk.common.KakaoSdk

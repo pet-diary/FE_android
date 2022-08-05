@@ -7,10 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.luvpets.petda.R
 import com.luvpets.petda.databinding.ActivityEnterMyInfoBinding
-import com.luvpets.petda.fragment.enterInfo.*
+import com.luvpets.petda.fragment.enterUserInfo.*
 import kotlin.concurrent.thread
 
-class EnterMyInfo : AppCompatActivity() {
+class EnterUserInfoActivity : AppCompatActivity() {
   private val binding by lazy { ActivityEnterMyInfoBinding.inflate(layoutInflater) }
   private var currentPage = 1
   

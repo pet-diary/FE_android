@@ -1,4 +1,4 @@
-package com.luvpets.petda.fragment.enterInfo
+package com.luvpets.petda.fragment.enterUserInfo
 
 import android.Manifest
 import android.app.AlertDialog
@@ -25,7 +25,7 @@ import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
 import com.bumptech.glide.Glide
 import com.luvpets.petda.R
-import com.luvpets.petda.activities.EnterMyInfo
+import com.luvpets.petda.activities.EnterUserInfoActivity
 import com.luvpets.petda.adapter.BreedAdapter
 import com.luvpets.petda.databinding.FragmentInfoPetBinding
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
@@ -126,7 +126,7 @@ class EnterInfoPetsFragment: Fragment(){
   }
   private fun requestPermission() {
     ActivityCompat.requestPermissions(
-      activity as EnterMyInfo,
+      activity as EnterUserInfoActivity,
       arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
       1000
     )

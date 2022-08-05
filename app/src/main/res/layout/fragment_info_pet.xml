@@ -10,7 +10,7 @@
   app:umanoPanelHeight="0dp"
   app:umanoScrollableView="@id/recyclerBreedList"
   app:umanoShadowHeight="2dp"
-  tools:context=".activities.EnterMyInfo">
+  tools:context=".activities.EnterUserInfoActivity">
 
   <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"

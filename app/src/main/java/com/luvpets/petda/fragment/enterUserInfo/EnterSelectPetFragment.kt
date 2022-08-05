@@ -1,4 +1,4 @@
-package com.luvpets.petda.fragment.enterInfo
+package com.luvpets.petda.fragment.enterUserInfo
 
 import android.os.Bundle
 import android.view.LayoutInflater

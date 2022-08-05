@@ -12,10 +12,10 @@ import androidx.fragment.app.Fragment
 import com.luvpets.petda.R
 import com.luvpets.petda.adapter.CommunityShareImageAdapter
 import com.luvpets.petda.databinding.FragmentCommunityShareDetailBinding
-import com.luvpets.petda.model.ShareDetailModel
-import com.luvpets.petda.model.enum.Category
-import com.luvpets.petda.service.Instance
-import com.luvpets.petda.service.ShareService
+import com.luvpets.petda.data.model.ShareDetailModel
+import com.luvpets.petda.data.enum.CategoryEnum
+import com.luvpets.petda.data.service.Instance
+import com.luvpets.petda.data.service.ShareService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -85,7 +85,7 @@ class ShareDetailFragment: Fragment() {
   
   private fun initCategory(category: String) {
     val target = binding.shareCategory
-    if (category == Category.CAT.category) {
+    if (category == CategoryEnum.CAT.category) {
       target.setTextColor(Color.parseColor("#3586ff"))
       target.setBackgroundResource(R.drawable.bg_18r_blue)
     }

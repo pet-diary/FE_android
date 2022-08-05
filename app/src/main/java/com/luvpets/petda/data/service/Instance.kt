@@ -1,4 +1,4 @@
-package com.luvpets.petda.service
+package com.luvpets.petda.data.service
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -14,8 +14,8 @@ import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.luvpets.petda.R
-import com.luvpets.petda.model.PhotoModel
-import com.luvpets.petda.util.DpToPx
+import com.luvpets.petda.data.model.PhotoModel
+import com.luvpets.petda.util.share.DpToPx
 
 class CommunityPhotoAdapter: ListAdapter<PhotoModel, CommunityPhotoAdapter.ViewHolder>(differ) {
   private val photoTagAdapter = CommunityPhotoTagAdapter()

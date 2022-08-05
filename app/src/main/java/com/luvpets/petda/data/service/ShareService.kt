@@ -1,8 +1,8 @@
-package com.luvpets.petda.service
+package com.luvpets.petda.data.service
 
 import com.luvpets.petda.dto.PhotoDto
 import com.luvpets.petda.dto.ShareDto
-import com.luvpets.petda.model.ShareDetailModel
+import com.luvpets.petda.data.model.ShareDetailModel
 import retrofit2.Call
 import retrofit2.http.GET
 

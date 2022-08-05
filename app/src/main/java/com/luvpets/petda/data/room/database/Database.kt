@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.luvpets.petda.model.PetInfoEntity
+import com.luvpets.petda.data.model.PetInfoEntity
 import com.luvpets.petda.room.dao.PetInfoDao
 
 @Database(entities = [PetInfoEntity::class], version = 1)

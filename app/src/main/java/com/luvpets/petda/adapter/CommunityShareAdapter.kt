@@ -1,15 +1,12 @@
 package com.luvpets.petda.adapter
 
-import android.content.Context
 import android.graphics.Color
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -17,9 +14,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.luvpets.petda.R
-import com.luvpets.petda.model.ShareModel
-import com.luvpets.petda.model.enum.Category
-import com.luvpets.petda.util.DpToPx
+import com.luvpets.petda.data.model.ShareModel
+import com.luvpets.petda.data.enum.CategoryEnum
+import com.luvpets.petda.util.share.DpToPx
 
 class CommunityShareAdapter(
   val itemClicked: (ShareModel) -> Unit
@@ -79,7 +76,7 @@ class CommunityShareAdapter(
   
   private fun initCategory(view: View, category: String) {
     val target = view.findViewById<AppCompatButton>(R.id.shareCategory)
-    if (category == Category.CAT.category) {
+    if (category == CategoryEnum.CAT.category) {
       target.setTextColor(Color.parseColor("#3586ff"))
       target.setBackgroundResource(R.drawable.bg_18r_blue)
     }

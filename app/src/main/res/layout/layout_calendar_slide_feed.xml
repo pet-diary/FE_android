@@ -57,77 +57,15 @@
         android:src="@drawable/ic_arrow_top" />
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/feedOptionList"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginTop="4dp">
-
-      <TextView
-        android:id="@+id/feedOption1"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:background="@drawable/btn_35r_outline"
-        android:gravity="center"
-        android:letterSpacing="-0.08"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="안먹음"
-        android:textColor="@color/gray_9"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,SpUsage" />
-
-      <TextView
-        android:id="@+id/feedOption2"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:background="@drawable/btn_35r_outline"
-        android:gravity="center"
-        android:letterSpacing="-0.08"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="적게먹음"
-        android:textColor="@color/gray_9"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@id/feedOption3"
-        app:layout_constraintStart_toEndOf="@id/feedOption1"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,SpUsage" />
-
-      <TextView
-        android:id="@+id/feedOption3"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:background="@drawable/btn_35r_outline"
-        android:gravity="center"
-        android:letterSpacing="-0.08"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="평소대로 먹음"
-        android:textColor="@color/gray_9"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@id/feedOption4"
-        app:layout_constraintStart_toEndOf="@id/feedOption2"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,SpUsage" />
-
-      <TextView
-        android:id="@+id/feedOption4"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:background="@drawable/btn_35r_outline"
-        android:gravity="center"
-        android:letterSpacing="-0.08"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="많이 먹음"
-        android:textColor="@color/gray_9"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,SpUsage" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+      android:layout_marginStart="-4sp"
+      android:layout_marginTop="4dp"
+      android:layout_marginEnd="-4sp"
+      android:orientation="horizontal"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
   </LinearLayout>
 

@@ -1,6 +1,5 @@
-package com.luvpets.petda.model
+package com.luvpets.petda.data.model
 
-import android.net.Uri
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

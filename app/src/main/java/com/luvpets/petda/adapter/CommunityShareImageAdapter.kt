@@ -11,8 +11,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.luvpets.petda.R
-import com.luvpets.petda.model.ShareDetailImagesModel
-import com.luvpets.petda.util.DpToPx
+import com.luvpets.petda.data.model.ShareDetailImagesModel
+import com.luvpets.petda.util.share.DpToPx
 
 class CommunityShareImageAdapter(): ListAdapter<ShareDetailImagesModel, CommunityShareImageAdapter.ViewHolder>(differ) {
   inner class ViewHolder(val view: View): RecyclerView.ViewHolder(view) {
