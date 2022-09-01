@@ -123,7 +123,6 @@ class SignUpActivity : AppCompatActivity() {
               Log.d("signupdata", "$response")
             }
 
-            // TODO: chk
             override fun onFailure(call: Call<LoginDto>, t: Throwable) {}
           })
       }
