@@ -123,9 +123,7 @@ class SignUpActivity : AppCompatActivity() {
               Log.d("signupdata", "$response")
             }
 
-            override fun onFailure(call: Call<LoginDto>, t: Throwable) {
-              TODO("Not yet implemented")
-            }
+            override fun onFailure(call: Call<LoginDto>, t: Throwable) {}
           })
       }
 //      val intent = Intent(this, EnterUserInfoActivity::class.java)
