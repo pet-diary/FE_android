@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 open class Instance {
   open val instance = Retrofit.Builder()
-    .baseUrl("https://run.mocky.io/")
+    .baseUrl("http://localhost:3000/api/")
     .addConverterFactory(GsonConverterFactory.create())
     .build()
 }

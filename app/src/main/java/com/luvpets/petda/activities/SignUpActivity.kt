@@ -4,12 +4,20 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.core.widget.addTextChangedListener
 import com.luvpets.petda.R
+import com.luvpets.petda.data.dto.LoginDto
+import com.luvpets.petda.data.service.Instance
+import com.luvpets.petda.data.service.UserService
 import com.luvpets.petda.databinding.ActivitySignUpBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.create
 import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
@@ -101,8 +109,27 @@ class SignUpActivity : AppCompatActivity() {
   }
   private fun handleUtil() {
     binding.btnNextPage.setOnClickListener {
-      val intent = Intent(this, EnterUserInfoActivity::class.java)
-      startActivity(intent)
+      val retrofit = Instance().instance
+      val loginData = LoginDto(
+        "${binding.inputEmail.text}",
+        "${binding.inputId.text}",
+        "${binding.inputPw.text}"
+      )
+      retrofit.create(UserService::class.java).also {
+        it.postLogin(loginData)
+          .enqueue(object: Callback<LoginDto> {
+            override fun onResponse(call: Call<LoginDto>, response: Response<LoginDto>) {
+              if (response.isSuccessful.not()) return
+              Log.d("signupdata", "$response")
+            }
+
+            override fun onFailure(call: Call<LoginDto>, t: Throwable) {
+              TODO("Not yet implemented")
+            }
+          })
+      }
+//      val intent = Intent(this, EnterUserInfoActivity::class.java)
+//      startActivity(intent)
     }
   }
 }
