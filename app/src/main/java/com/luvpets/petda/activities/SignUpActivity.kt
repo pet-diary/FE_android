@@ -116,14 +116,21 @@ class SignUpActivity : AppCompatActivity() {
         "${binding.inputPw.text}"
       )
       retrofit.create(UserService::class.java).also {
+        Log.d("signupdata", "retrofit: $loginData")
         it.postLogin(loginData)
           .enqueue(object: Callback<LoginDto> {
             override fun onResponse(call: Call<LoginDto>, response: Response<LoginDto>) {
+              Log.d("signupdata", "success: $response")
+              
+              // code=409, message=Conflict
+              // code=201, message=Created,
               if (response.isSuccessful.not()) return
-              Log.d("signupdata", "$response")
+              Log.d("signupdata", "??: $response")
             }
 
-            override fun onFailure(call: Call<LoginDto>, t: Throwable) {}
+            override fun onFailure(call: Call<LoginDto>, t: Throwable) {
+              Log.d("signupdata", "error: $t")
+            }
           })
       }
 //      val intent = Intent(this, EnterUserInfoActivity::class.java)

@@ -6,6 +6,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface UserService {
-    @POST("/api/users/signup")
+    @POST("/users/signup")
     fun postLogin(@Body loginDto: LoginDto) : Call<LoginDto>
 }
