@@ -10,7 +10,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.core.widget.addTextChangedListener
-import com.luvpets.petda.data.dto.LoginDto
+import com.luvpets.petda.data.dto.SignUpDto
 import com.luvpets.petda.data.service.Instance
 import com.luvpets.petda.data.service.UserService
 import com.luvpets.petda.databinding.ActivitySignUpBinding
@@ -132,16 +132,16 @@ class SignUpActivity : AppCompatActivity() {
   private fun handleUtil() {
     binding.btnNextPage.setOnClickListener {
       val retrofit = Instance().instance
-      val loginData = LoginDto(
+      val signUpDto = SignUpDto(
         "${binding.inputEmail.text}",
         "${binding.inputId.text}",
         "${binding.inputPw.text}"
       )
       retrofit.create(UserService::class.java).also {
         val dialog = CustomDialog(this@SignUpActivity)
-        it.postLogin(loginData)
-          .enqueue(object: Callback<LoginDto> {
-            override fun onResponse(call: Call<LoginDto>, response: Response<LoginDto>) {
+        it.signup(signUpDto)
+          .enqueue(object: Callback<SignUpDto> {
+            override fun onResponse(call: Call<SignUpDto>, response: Response<SignUpDto>) {
               if (response.isSuccessful) {
                 dialog.showDialog("회원가입이 완료되었습니다.", response.isSuccessful)
                 dialog.setOnConfirmedListener{handleNextStep()}
@@ -150,7 +150,7 @@ class SignUpActivity : AppCompatActivity() {
                 dialog.setOnConfirmedListener{handleNextStep()}
               }
             }
-            override fun onFailure(call: Call<LoginDto>, t: Throwable) {
+            override fun onFailure(call: Call<SignUpDto>, t: Throwable) {
               dialog.showDialog("회원가입에 실패하였습니다. error: $t", false)
             }
           })

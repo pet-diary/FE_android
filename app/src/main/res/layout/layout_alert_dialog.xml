@@ -14,7 +14,8 @@
         android:paddingStart="12dp"
         android:paddingTop="9dp"
         android:paddingEnd="12dp"
-        android:paddingBottom="9dp">
+        android:paddingBottom="9dp"
+        tools:ignore="UselessParent">
 
         <TextView
             android:id="@+id/alertDialogText"

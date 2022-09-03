@@ -174,7 +174,7 @@
           android:fontFamily="@font/pretendard_bold"
           android:gravity="center"
           android:text="@string/start_email"
-          android:textColor="@color/kakao_text"
+          android:textColor="@color/gray_8"
           android:textSize="16sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent" />
@@ -217,6 +217,7 @@
       android:paddingBottom="17dp"
       android:text="@string/invite"
       android:textSize="16sp"
+      android:visibility="invisible"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent" />
