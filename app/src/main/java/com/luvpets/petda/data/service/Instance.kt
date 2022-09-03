@@ -8,7 +8,7 @@ import java.lang.reflect.Type
 
 open class Instance {
   open val instance = Retrofit.Builder()
-    .baseUrl("http://10.0.2.2:3000/api/")
+    .baseUrl("http://192.168.0.13:3000/api/")
     .addConverterFactory(NullOnEmptyConverterFactory())
     .addConverterFactory(GsonConverterFactory.create())
     .build()

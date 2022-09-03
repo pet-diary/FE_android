@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.kakao.sdk.auth.model.OAuthToken
-import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.user.UserApiClient
+import com.kakao.sdk.common.model.AuthErrorCause
 import com.luvpets.petda.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -25,11 +25,7 @@ class LoginActivity : AppCompatActivity() {
     binding.btnStartKakao.setOnClickListener {
 //      val keyHash = Utility.getKeyHash(this)
 //      Log.d("hash", keyHash)
-      if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)){
-        UserApiClient.instance.loginWithKakaoTalk(this, callback = callback)
-      } else{
-        UserApiClient.instance.loginWithKakaoAccount(this, callback = callback)
-      }
+      UserApiClient.instance.loginWithKakaoAccount(this, callback = callback)
     }
   }
   private val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->

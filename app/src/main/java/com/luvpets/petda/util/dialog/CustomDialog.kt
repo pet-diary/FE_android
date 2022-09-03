@@ -1,34 +1,50 @@
 package com.luvpets.petda.util.dialog
 
 import android.app.Dialog
-import android.content.Context
-import android.view.WindowManager
-import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.app.AppCompatActivity
 import com.luvpets.petda.R
+import com.luvpets.petda.databinding.LayoutAlertDialogBinding
 
-class CustomDialog(context: Context) {
-    private val dialog = Dialog(context)
-    private lateinit var onClickListener: OnDialogClickListener
+class CustomDialog(
+  private val context: AppCompatActivity
+) {
+  private lateinit var binding: LayoutAlertDialogBinding
+  private lateinit var listener: ConfirmListener
+  private val dialog = Dialog(context)
 
-    fun setOnClickListener(listener: OnDialogClickListener) { onClickListener = listener }
+  fun showDialog(content: String, status: Boolean) {
+    binding = LayoutAlertDialogBinding.inflate(context.layoutInflater)
 
-    fun showDialog()
-    {
-        dialog.setContentView(R.layout.layout_alert_dialog)
-        dialog.window!!.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)
-        dialog.setCanceledOnTouchOutside(true)
-        dialog.setCancelable(true)
-        dialog.show()
+    binding.alertDialogText.text = content
 
-        dialog.findViewById<AppCompatButton>(R.id.btnCancel).setOnClickListener {
-            dialog.dismiss()
-        }
+    dialog.apply {
+      setContentView(binding.root)
+      setCanceledOnTouchOutside(true)
+      setCancelable(true)
+      show()
+      window?.apply {
+        setBackgroundDrawableResource(R.drawable.bg_18r_white)
+      }
+    }
+    binding.btnConfirm.setOnClickListener {
+      if (status) listener.onConfirmed()
+      dialog.dismiss()
+    }
+    binding.btnCancel.setOnClickListener {
+      dialog.dismiss()
+    }
+  }
 
-        dialog.findViewById<AppCompatButton>(R.id.btnConfirm).setOnClickListener {
-            dialog.dismiss()
-        }
-
+  fun setOnConfirmedListener(listener: () -> Unit) {
+    this.listener = object : ConfirmListener {
+      override fun onConfirmed() {
+        listener()
+      }
     }
 
-    interface OnDialogClickListener { fun onClicked(name: String) }
+  }
+
+  interface ConfirmListener {
+    fun onConfirmed()
+  }
 }

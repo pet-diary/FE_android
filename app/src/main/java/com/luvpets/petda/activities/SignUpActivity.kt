@@ -4,20 +4,20 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.text.Editable
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.core.widget.addTextChangedListener
-import com.luvpets.petda.R
 import com.luvpets.petda.data.dto.LoginDto
 import com.luvpets.petda.data.service.Instance
 import com.luvpets.petda.data.service.UserService
 import com.luvpets.petda.databinding.ActivitySignUpBinding
+import com.luvpets.petda.util.dialog.CustomDialog
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.create
 import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
@@ -32,80 +32,102 @@ class SignUpActivity : AppCompatActivity() {
   }
   
   private fun initInput() {
-    handleInput(binding.inputEmail, binding.deleteInputEmail)
-    handleInput(binding.inputId, binding.deleteInputId)
-    handleInput(binding.inputPw, binding.deleteInputPw)
-    handleInput(binding.inputPwChk, binding.deleteInputPwChk)
+    handleInput(binding.inputEmail, binding.deleteInputEmail, binding.noticeEmail)
+    handleInput(binding.inputId, binding.deleteInputId, binding.noticeId)
+    handleInput(binding.inputPw, binding.deleteInputPw, binding.noticePw)
+    handleInput(binding.inputPwChk, binding.deleteInputPwChk, binding.noticePwChk)
   }
-  private fun handleInput(input: EditText, delBtn: ImageButton) {
-    input.setOnFocusChangeListener { _, is_focus ->
-      if (is_focus && input.text.isEmpty()) delBtn.visibility = View.INVISIBLE
-    }
+  private fun handleInput(input: EditText, delBtn: ImageButton, notice: TextView) {
     delBtn.setOnClickListener {
       input.text = null
       delBtn.visibility = View.INVISIBLE
-      if (delBtn == binding.deleteInputPw ||delBtn == binding.deleteInputPwChk ) {
-        binding.noticePwChk.visibility = View.INVISIBLE
-      }
+      notice.visibility = View.INVISIBLE
+      binding.btnNextPage.visibility = View.INVISIBLE
+      handleTextChangeInput(input, delBtn, notice)
     }
-    handleTextChangeInput(input, delBtn)
+    handleTextChangeInput(input, delBtn, notice)
   }
-  private fun handleTextChangeInput(input: EditText, delBtn: ImageButton) {
+  private fun handleTextChangeInput(input: EditText, delBtn: ImageButton, notice: TextView) {
     val inputText = input.text
     val btnNextPage = binding.btnNextPage
     val scrollView = binding.scrollSignUp
-    val email = binding.inputEmail
-    val id = binding.inputId
-    val pw = binding.inputPw
-    val pwChk = binding.inputPwChk
+    val email = binding.inputEmail.text
+    val id = binding.inputId.text
+    val pw = binding.inputPw.text
+    val pwChk = binding.inputPwChk.text
+    var status: Boolean
     input.addTextChangedListener {
-      if (inputText.toString().isEmpty()) delBtn.visibility = View.INVISIBLE
-      else delBtn.visibility = View.VISIBLE
-    
-    
-      val isActive = email.text.isNotEmpty() && id.text.isNotEmpty() && pw.text.isNotEmpty() && pwChk.text.isNotEmpty()
-      if (isActive && (pw.text.toString() == pwChk.text.toString())) {
+      if (inputText.isEmpty()) {
+        delBtn.visibility = View.INVISIBLE
+        notice.visibility = View.INVISIBLE
+        if (pw.toString() != pwChk.toString()) {
+          binding.noticePwChk.text ="*비밀번호가 일치하지 않습니다."
+          binding.noticePwChk.setTextColor(Color.parseColor("#f05c5c"))
+        }
+      } else {
+        delBtn.visibility = View.VISIBLE
+        status = validation(input.text, notice)
+        if (status) notice.visibility = View.VISIBLE
+        else notice.visibility = View.INVISIBLE
+      }
+
+      val isFull = email.isNotEmpty() && id.isNotEmpty() && pw.isNotEmpty() && pwChk.isNotEmpty()
+      if (
+        isFull
+        && (binding.noticeEmail.visibility == View.INVISIBLE)
+        && (binding.noticePw.visibility == View.INVISIBLE)
+        && (pw.toString() == pwChk.toString())
+      ) {
         btnNextPage.visibility = View.VISIBLE
         scrollView.setPadding(0, 0, 0, 250)
       } else {
         btnNextPage.visibility = View.INVISIBLE
         scrollView.setPadding(0, 0, 0, 0)
       }
-    
-      when(input) {
-        email -> {
-          val emailPattern = android.util.Patterns.EMAIL_ADDRESS
-          val notifyMsg = binding.noticeEmail
-          if (emailPattern.matcher(inputText.toString()).matches()) {
-            notifyMsg.visibility = View.INVISIBLE
-          } else {
-            notifyMsg.visibility = View.VISIBLE
-            notifyMsg.text = getString(R.string.email_error)
-          }
+    }
+  }
+
+  private fun validation(
+    input: Editable,
+    notice: TextView
+  ): Boolean {
+    var status = false
+    val emailPattern = android.util.Patterns.EMAIL_ADDRESS
+    val pwPattern = "^(?=.*[a-zA-Z])(?=.*[0-9]).{1,8}\$"
+
+    when (input) {
+      binding.inputEmail.text -> {
+        if (input.isNotEmpty() && !emailPattern.matcher(input).matches()) {
+          status = true
+          notice.text = "*이메일 형식이 올바르지 않습니다."
         }
-        pw -> {
-          val notifyMsg = binding.noticePw
-          if (Pattern.matches("^(?=.*[a-zA-Z])(?=.*[0-9]).{1,8}$", inputText.toString())) {
-            notifyMsg.visibility = View.INVISIBLE
-          } else {
-            notifyMsg.visibility = View.VISIBLE
-            notifyMsg.text = getString(R.string.pw_error)
-          }
+      }
+      binding.inputPw.text -> {
+        if (input.isNotEmpty() && !Pattern.matches(pwPattern, input.toString())) {
+          status = true
+          notice.text = "*비밀번호는 영문,숫자 포함하여 8자 이내로 입력해주세요."
         }
-        pwChk -> {
-          if (pw.text.toString() == inputText.toString()) {
-            binding.noticePwChk.visibility = View.VISIBLE
-            binding.noticePwChk.text = getString(R.string.pass_pw_chk)
-            binding.noticePwChk.setTextColor(Color.parseColor("#50c99b"))
-          } else {
-            binding.noticePwChk.visibility = View.VISIBLE
-            binding.noticePwChk.text = getString(R.string.fail_pw_chk)
-            binding.noticePwChk.setTextColor(Color.parseColor("#f05c5c"))
-          }
+        if (input.toString() != binding.inputPwChk.text.toString()) {
+          binding.noticePwChk.text ="*비밀번호가 일치하지 않습니다."
+          binding.noticePwChk.setTextColor(Color.parseColor("#f05c5c"))
+        } else {
+          binding.noticePwChk.text ="*비밀번호가 일치합니다."
+          binding.noticePwChk.setTextColor(Color.parseColor("#50c99b"))
         }
-        else -> {}
+      }
+      binding.inputPwChk.text -> {
+        status = true
+        if (input.toString() != binding.inputPw.text.toString()) {
+          notice.text ="*비밀번호가 일치하지 않습니다."
+          notice.setTextColor(Color.parseColor("#f05c5c"))
+        } else {
+          notice.text ="*비밀번호가 일치합니다."
+          notice.setTextColor(Color.parseColor("#50c99b"))
+        }
       }
     }
+
+    return status
   }
   private fun handleUtil() {
     binding.btnNextPage.setOnClickListener {
@@ -116,25 +138,28 @@ class SignUpActivity : AppCompatActivity() {
         "${binding.inputPw.text}"
       )
       retrofit.create(UserService::class.java).also {
-        Log.d("signupdata", "retrofit: $loginData")
+        val dialog = CustomDialog(this@SignUpActivity)
         it.postLogin(loginData)
           .enqueue(object: Callback<LoginDto> {
             override fun onResponse(call: Call<LoginDto>, response: Response<LoginDto>) {
-              Log.d("signupdata", "success: $response")
-              
-              // code=409, message=Conflict
-              // code=201, message=Created,
-              if (response.isSuccessful.not()) return
-              Log.d("signupdata", "??: $response")
+              if (response.isSuccessful) {
+                dialog.showDialog("회원가입이 완료되었습니다.", response.isSuccessful)
+                dialog.setOnConfirmedListener{handleNextStep()}
+              } else {
+                dialog.showDialog("회원가입에 실패하였습니다. error: ${response.message()}", response.isSuccessful)
+                dialog.setOnConfirmedListener{handleNextStep()}
+              }
             }
-
             override fun onFailure(call: Call<LoginDto>, t: Throwable) {
-              Log.d("signupdata", "error: $t")
+              dialog.showDialog("회원가입에 실패하였습니다. error: $t", false)
             }
           })
       }
-//      val intent = Intent(this, EnterUserInfoActivity::class.java)
-//      startActivity(intent)
     }
+  }
+
+  private fun handleNextStep() {
+    val intent = Intent(this, EnterUserInfoActivity::class.java)
+    startActivity(intent)
   }
 }
