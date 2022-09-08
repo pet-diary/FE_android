@@ -52,33 +52,33 @@ class ShareFragment: Fragment() {
   }
   private fun getShareListFromApi() {
     // retrofit 생성
-    val retrofit = Instance().instance
-    
-    // 호출
-    retrofit.create(ShareService::class.java).also {
-      it.getShareList()
-        .enqueue(object: Callback<ShareDto> {
-          // 성공시
-          override fun onResponse(call: Call<ShareDto>, response: Response<ShareDto>) {
-            if (response.isSuccessful.not()) return
-            loadingContent.loadingContent.visibility = View.GONE
-            response.body()?.let { dto ->
-              shareAdapter.submitList(dto.items)
-            }
-  
-            val r = Runnable {
-              val tempEntity = PetInfoEntity(0, "", "가을", "2019.07.15", 3, 6, "스노우슈")
-              context?.let { it1 -> PetInfoDB.getInstance(it1).dao().addPetInfo(tempEntity) }
-            }
-            val thread = Thread(r)
-            thread.start()
-          }
-  
-          // 실패시
-          override fun onFailure(call: Call<ShareDto>, t: Throwable) {
-            binding.loadingContent.loadingText.text = "데이터 로드에 실패했습니다."
-          }
-        })
-    }
+//    val retrofit = Instance().instance
+//
+//    // 호출
+//    retrofit.create(ShareService::class.java).also {
+//      it.getShareList()
+//        .enqueue(object: Callback<ShareDto> {
+//          // 성공시
+//          override fun onResponse(call: Call<ShareDto>, response: Response<ShareDto>) {
+//            if (response.isSuccessful.not()) return
+//            loadingContent.loadingContent.visibility = View.GONE
+//            response.body()?.let { dto ->
+//              shareAdapter.submitList(dto.items)
+//            }
+//
+//            val r = Runnable {
+//              val tempEntity = PetInfoEntity(0, "", "가을", "2019.07.15", 3, 6, "스노우슈")
+//              context?.let { it1 -> PetInfoDB.getInstance(it1).dao().addPetInfo(tempEntity) }
+//            }
+//            val thread = Thread(r)
+//            thread.start()
+//          }
+//
+//          // 실패시
+//          override fun onFailure(call: Call<ShareDto>, t: Throwable) {
+//            binding.loadingContent.loadingText.text = "데이터 로드에 실패했습니다."
+//          }
+//        })
+//    }
   }
 }

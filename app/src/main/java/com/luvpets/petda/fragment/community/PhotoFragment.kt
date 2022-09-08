@@ -25,8 +25,7 @@ class PhotoFragment: Fragment() {
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    
-    
+
     initAdapter()
     initLoadingAnimation()
     getPhotoListFromApi()
@@ -43,23 +42,23 @@ class PhotoFragment: Fragment() {
     binding.loadingContent.loadingPaw.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.loading_paw))
   }
   private fun getPhotoListFromApi() {
-    val retrofit = Instance().instance
-    
-    retrofit.create(ShareService::class.java).also {
-      it.getPhotoList()
-        .enqueue(object: Callback<PhotoDto> {
-          override fun onResponse(call: Call<PhotoDto>, response: Response<PhotoDto>) {
-            if (response.isSuccessful.not()) return
-            loadingContent.loadingContent.visibility = View.GONE
-            response.body()?.let { dto ->
-              photoAdapter.submitList(dto.items)
-            }
-          }
-  
-          override fun onFailure(call: Call<PhotoDto>, t: Throwable) {
-            binding.loadingContent.loadingText.text = "데이터 로드에 실패했습니다."
-          }
-        })
-    }
+//    val retrofit = Instance(context).instance
+//
+//    retrofit.create(ShareService::class.java).also {
+//      it.getPhotoList()
+//        .enqueue(object: Callback<PhotoDto> {
+//          override fun onResponse(call: Call<PhotoDto>, response: Response<PhotoDto>) {
+//            if (response.isSuccessful.not()) return
+//            loadingContent.loadingContent.visibility = View.GONE
+//            response.body()?.let { dto ->
+//              photoAdapter.submitList(dto.items)
+//            }
+//          }
+//
+//          override fun onFailure(call: Call<PhotoDto>, t: Throwable) {
+//            binding.loadingContent.loadingText.text = "데이터 로드에 실패했습니다."
+//          }
+//        })
+//    }
   }
 }

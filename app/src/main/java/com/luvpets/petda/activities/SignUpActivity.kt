@@ -131,7 +131,7 @@ class SignUpActivity : AppCompatActivity() {
   }
   private fun handleUtil() {
     binding.btnNextPage.setOnClickListener {
-      val retrofit = Instance().instance
+      val retrofit = Instance(baseContext).instance
       val signUpDto = SignUpDto(
         "${binding.inputEmail.text}",
         "${binding.inputId.text}",

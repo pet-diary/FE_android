@@ -68,6 +68,8 @@ dependencies {
     // retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    // cookie setting
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:4.9.0'
 
     // room
     implementation 'androidx.room:room-runtime:2.4.3'
